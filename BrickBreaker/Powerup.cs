@@ -9,5 +9,33 @@ namespace BrickBreaker
     internal class Powerup
     {
 
+        public int height = 25;
+        public int width = 12;
+
+        public int x;
+        public int y;
+        public int powerNumber;
+
+        Random randGen = new Random();
+
+        public Powerup(int x_, int y_, int powerNumber_)
+        {
+            x = x_;
+            y = y_;
+
+
+        }
+
+        public void SpawnUp(int powerNumber_)
+        {
+            powerNumber = powerNumber_;
+
+            if ()
+            {
+
+            }
+
+        }
+
     }
 }
