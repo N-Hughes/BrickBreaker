@@ -43,11 +43,16 @@ namespace BrickBreaker
         {
             InitializeComponent();
             OnStart();
+
         }
 
+       public void cam()
+        {
 
+        }
         public void OnStart()
         {
+          
             //set life counter
             lives = 3;
 
@@ -126,6 +131,9 @@ namespace BrickBreaker
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
+            //test
+            cam();
+
             // Move the paddle
             if (leftArrowDown && paddle.x > 0)
             {
