@@ -39,8 +39,6 @@ namespace BrickBreaker
 
         #endregion
 
-        //jklfjsdl
-
         public GameScreen()
         {
             InitializeComponent();
