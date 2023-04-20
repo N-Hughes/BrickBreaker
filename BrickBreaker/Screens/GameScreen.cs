@@ -211,9 +211,15 @@ namespace BrickBreaker
             e.Graphics.FillRectangle(ballBrush, ball.x, ball.y, ball.size, ball.size);
         }
 
+
         public void KianMethod()
         {
            
+        }
+
+        public void Noah()
+        {
+
         }
     }
 }
