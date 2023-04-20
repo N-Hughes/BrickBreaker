@@ -40,15 +40,25 @@ namespace BrickBreaker
             return blockRec.IntersectsWith(ballRec);
         }
 
-        public void PaddleCollision(Paddle p)
+        public bool PaddleCollision(Paddle p)
         {
             Rectangle ballRec = new Rectangle(x, y, size, size);
             Rectangle paddleRec = new Rectangle(p.x, p.y, p.width, p.height);
 
             if (ballRec.IntersectsWith(paddleRec))
             {
+               if(ySpeed > 0)
+                {
+                    y = p.y - size;
+                }
+                else
+                {
+                    y = p.y + p.height;
+                }
                 ySpeed *= -1;
             }
+
+            return paddleRec.IntersectsWith(ballRec);
         }
 
         public void WallCollision(UserControl UC)
@@ -64,7 +74,7 @@ namespace BrickBreaker
                 xSpeed *= -1;
             }
             // Collision with top wall
-            if (y <= 2)
+            if (y <= 1)
             {
                 ySpeed *= -1;
             }

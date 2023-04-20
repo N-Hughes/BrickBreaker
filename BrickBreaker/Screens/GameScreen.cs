@@ -126,6 +126,7 @@ namespace BrickBreaker
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
+            KianMethod(); //Test Pull Request Kian
             // Move the paddle
             if (leftArrowDown && paddle.x > 0)
             {
@@ -208,6 +209,11 @@ namespace BrickBreaker
 
             // Draws ball
             e.Graphics.FillRectangle(ballBrush, ball.x, ball.y, ball.size, ball.size);
+        }
+
+        public void KianMethod()
+        {
+           
         }
     }
 }
