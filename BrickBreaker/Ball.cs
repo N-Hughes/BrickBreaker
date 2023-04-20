@@ -34,15 +34,15 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(blockRec))
             {
-                if(ySpeed > 0)
-                {
-                    b.y = b.width + size;
+                //if(ySpeed > 0)
+                //{
+                //    b.x = b.width + size;
 
-                }
-                else if(ySpeed < 0)
-                {
-                    b.y = b.height - size;
-                }
+                //}
+                //else if(ySpeed < 0)
+                //{
+                //    b.y = b.height - size;
+                //}
                 ySpeed *= -1;
             }
 
