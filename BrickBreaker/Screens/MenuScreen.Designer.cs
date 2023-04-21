@@ -107,8 +107,7 @@
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.playButton);
             this.Name = "MenuScreen";
-            this.Size = new System.Drawing.Size(1368, 788);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.Size = new System.Drawing.Size(1386, 788);
             this.ResumeLayout(false);
 
         }
