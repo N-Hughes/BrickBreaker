@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Xml.XPath;
 
 namespace BrickBreaker
 {
@@ -24,7 +25,7 @@ namespace BrickBreaker
         public void Move()
         {
             x = x + xSpeed;
-            y = y + ySpeed;
+            y = y + ySpeed * rand.Next(1, 10);
         }
 
         public bool BlockCollision(Block b)
@@ -34,15 +35,17 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(blockRec))
             {
-                //if(ySpeed > 0)
-                //{
-                //    b.x = b.width + size;
-
-                //}
-                //else if(ySpeed < 0)
-                //{
-                //    b.y = b.height - size;
-                //}
+                if (x + (size / 2) <= b.x || x + (size / 2)>= b.x + b.width)
+                {
+                    if(xSpeed > 0)
+                    {
+                        b.x = b.x - size;
+                    }
+                    else if (xSpeed < 0)
+                    {
+                        b.x = b.x + size;
+                    }
+                }
                 ySpeed *= -1;
             }
 
@@ -56,11 +59,11 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(paddleRec))
             {
-                if(ySpeed > 0)
+                if (ySpeed > 0)
                 {
                     y = p.y - size;
                 }
-                else if( ySpeed < 0)
+                else if (ySpeed < 0)
                 {
                     y = p.y + size;
                 }
@@ -83,7 +86,7 @@ namespace BrickBreaker
                 xSpeed *= -1;
             }
             // Collision with top wall
-            if (y <= 1)
+            if (y <= 2)
             {
                 ySpeed *= -1;
             }

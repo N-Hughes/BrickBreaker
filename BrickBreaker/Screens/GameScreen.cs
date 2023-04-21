@@ -79,7 +79,7 @@ namespace BrickBreaker
             blocks.Clear();
             int x = 10;
 
-            while (blocks.Count < 12)
+            while (blocks.Count < 30) //originally 12, changed to test collision, Kian
             {
                 x += 57;
                 Block b1 = new Block(x, 10, 1, Color.White);
