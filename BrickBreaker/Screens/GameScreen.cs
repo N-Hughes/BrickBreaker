@@ -1,7 +1,7 @@
 ﻿/*  Created by: 
  *  Project: Brick Breaker
  *  Date: 
- */ 
+ */
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,7 +20,7 @@ namespace BrickBreaker
         #region global values
 
         //player1 button control keys - DO NOT CHANGE
-        Boolean leftArrowDown, rightArrowDown;
+        Boolean leftArrowDown, rightArrowDown, spaceDown;
 
         // Game values
         int lives;
@@ -50,7 +50,6 @@ namespace BrickBreaker
         {
             //set life counter
             lives = 3;
-
             //set all button presses to false.
             leftArrowDown = rightArrowDown = false;
 
@@ -72,10 +71,12 @@ namespace BrickBreaker
             int ballSize = 20;
             ball = new Ball(ballX, ballY, xSpeed, ySpeed, ballSize);
 
+            //ball launch - Kian
+            ball.canMove = false;
             #region Creates blocks for generic level. Need to replace with code that loads levels.
-            
+
             //TODO - replace all the code in this region eventually with code that loads levels from xml files
-            
+
             blocks.Clear();
             int x = 10;
 
@@ -103,6 +104,9 @@ namespace BrickBreaker
                 case Keys.Right:
                     rightArrowDown = true;
                     break;
+                case Keys.Space:
+                    spaceDown = true;
+                    break;
                 default:
                     break;
             }
@@ -119,6 +123,9 @@ namespace BrickBreaker
                 case Keys.Right:
                     rightArrowDown = false;
                     break;
+                case Keys.Space:
+                    spaceDown = false;
+                    break;
                 default:
                     break;
             }
@@ -126,7 +133,18 @@ namespace BrickBreaker
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
-            KianMethod(); //Test Pull Request Kian
+
+            // Move ball to paddle when it needs to stick to it
+            if (ball.canMove == false)
+            {
+                ball.x = paddle.x + (paddle.width / 2) - (ball.size / 2);
+                ball.y = paddle.y - paddle.height;
+            }
+            if (spaceDown == true) //launch ball
+            {
+                ball.canMove = true;
+            }
+
             // Move the paddle
             if (leftArrowDown && paddle.x > 0)
             {
@@ -188,7 +206,7 @@ namespace BrickBreaker
             // Goes to the game over screen
             Form form = this.FindForm();
             MenuScreen ps = new MenuScreen();
-            
+
             ps.Location = new Point((form.Width - ps.Width) / 2, (form.Height - ps.Height) / 2);
 
             form.Controls.Add(ps);
@@ -212,10 +230,7 @@ namespace BrickBreaker
         }
 
 
-        public void KianMethod()
-        {
-           
-        }
+
 
         public void Noah()
         {

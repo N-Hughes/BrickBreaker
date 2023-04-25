@@ -7,6 +7,7 @@ namespace BrickBreaker
 {
     public class Ball
     {
+        public bool canMove;
         public int x, y, xSpeed, ySpeed, size;
         public Color colour;
 
@@ -24,8 +25,9 @@ namespace BrickBreaker
 
         public void Move()
         {
+            if (canMove == false) { return; }
             x = x + xSpeed;
-            y = y + ySpeed * rand.Next(1, 10);
+            y = y + ySpeed;
         }
 
         public bool BlockCollision(Block b)
@@ -37,6 +39,7 @@ namespace BrickBreaker
             {
                 if (x + (size / 2) <= b.x || x + (size / 2)>= b.x + b.width)
                 {
+                    xSpeed *= -1;
                     if(xSpeed > 0)
                     {
                         b.x = b.x - size;
@@ -46,8 +49,20 @@ namespace BrickBreaker
                         b.x = b.x + size;
                     }
                 }
+                else
+                {
                 ySpeed *= -1;
-            }
+                     if (ySpeed > 0)
+                    {
+                        b.y = b.y + size;
+                    }
+                    else if(ySpeed < 0)
+                    {
+                        b.y = b.y - size;
+                    }
+                }   
+
+                }
 
             return blockRec.IntersectsWith(ballRec);
         }
