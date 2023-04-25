@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Xml.XPath;
 
 namespace BrickBreaker
 {
     public class Ball
     {
+        public bool canMove;
         public int x, y, xSpeed, ySpeed, size;
         public Color colour;
 
@@ -23,6 +25,7 @@ namespace BrickBreaker
 
         public void Move()
         {
+            if (canMove == false) { return; }
             x = x + xSpeed;
             y = y + ySpeed;
         }
@@ -34,17 +37,32 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(blockRec))
             {
-                if(ySpeed > 0)
+                if (x + (size / 2) <= b.x || x + (size / 2)>= b.x + b.width)
                 {
-                    b.y = b.width + size;
+                    xSpeed *= -1;
+                    if(xSpeed > 0)
+                    {
+                        b.x = b.x - size;
+                    }
+                    else if (xSpeed < 0)
+                    {
+                        b.x = b.x + size;
+                    }
+                }
+                else
+                {
+                ySpeed *= -1;
+                     if (ySpeed > 0)
+                    {
+                        b.y = b.y + size;
+                    }
+                    else if(ySpeed < 0)
+                    {
+                        b.y = b.y - size;
+                    }
+                }   
 
                 }
-                else if(ySpeed < 0)
-                {
-                    b.y = b.height - size;
-                }
-                ySpeed *= -1;
-            }
 
             return blockRec.IntersectsWith(ballRec);
         }
@@ -56,11 +74,11 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(paddleRec))
             {
-                if(ySpeed > 0)
+                if (ySpeed > 0)
                 {
                     y = p.y - size;
                 }
-                else if( ySpeed < 0)
+                else if (ySpeed < 0)
                 {
                     y = p.y + size;
                 }
@@ -83,7 +101,7 @@ namespace BrickBreaker
                 xSpeed *= -1;
             }
             // Collision with top wall
-            if (y <= 1)
+            if (y <= 2)
             {
                 ySpeed *= -1;
             }
