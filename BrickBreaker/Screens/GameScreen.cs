@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Xml;
 
 namespace BrickBreaker
 {
@@ -24,6 +25,7 @@ namespace BrickBreaker
 
         // Game values
         int lives;
+        int level;
 
         // Paddle and Ball objects
         Paddle paddle;
@@ -43,13 +45,22 @@ namespace BrickBreaker
         {
             InitializeComponent();
             OnStart();
+
         }
 
+       public void cam()
+        {
 
+        }
         public void OnStart()
         {
+          
             //set life counter
             lives = 3;
+
+            //set level tracker
+            level = 1;
+
             //set all button presses to false.
             leftArrowDown = rightArrowDown = false;
 
@@ -71,23 +82,53 @@ namespace BrickBreaker
             int ballSize = 20;
             ball = new Ball(ballX, ballY, xSpeed, ySpeed, ballSize);
 
+
             //ball launch - Kian
             ball.canMove = false;
-            #region Creates blocks for generic level. Need to replace with code that loads levels.
+            //#region Creates blocks for generic level. Need to replace with code that loads levels.
 
             //TODO - replace all the code in this region eventually with code that loads levels from xml files
 
-            blocks.Clear();
-            int x = 10;
+            //blocks.Clear();
+            //int x = 10;
 
-            while (blocks.Count < 30) //originally 12, changed to test collision, Kian
+            //while (blocks.Count < 30) //originally 12, changed to test collision, Kian
+            //{
+            //    x += 57;
+            //    Block b1 = new Block(x, 10, 1, Color.White);
+            //    blocks.Add(b1);
+            //}
+
+            //#endregion
+
+            XmlReader reader = XmlReader.Create("Resources/brickTest.xml");
+
+            while (reader.Read())
             {
-                x += 57;
-                Block b1 = new Block(x, 10, 1, Color.White);
-                blocks.Add(b1);
+                int x, y, hp;
+                Color color = Color.DarkRed;
+                string test;
+
+                reader.ReadToFollowing("X");
+                test = reader.ReadString();
+                
+                if(test == "")
+                {
+                    break;
+                }
+                
+                x = Convert.ToInt32(test);
+                
+                reader.ReadToNextSibling("Y");
+                y = Convert.ToInt32(reader.ReadString());
+
+                reader.ReadToNextSibling("HP");
+                hp = Convert.ToInt32(reader.ReadString());
+
+                blocks.Add(new Block(x, y, hp, color));
             }
 
-            #endregion
+            reader.Close();
 
             // start the game engine loop
             gameTimer.Enabled = true;
@@ -133,7 +174,6 @@ namespace BrickBreaker
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
-
             // Move ball to paddle when it needs to stick to it
             if (ball.canMove == false)
             {
@@ -144,6 +184,11 @@ namespace BrickBreaker
             {
                 ball.canMove = true;
             }
+
+            //test
+            cam();
+
+            //KianMethod(); //Test Pull Request Kian
 
             // Move the paddle
             if (leftArrowDown && paddle.x > 0)
