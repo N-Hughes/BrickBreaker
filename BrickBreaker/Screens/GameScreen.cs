@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Xml;
 
 namespace BrickBreaker
 {
@@ -24,6 +25,7 @@ namespace BrickBreaker
 
         // Game values
         int lives;
+        int level;
 
         // Paddle and Ball objects
         Paddle paddle;
@@ -56,6 +58,9 @@ namespace BrickBreaker
             //set life counter
             lives = 3;
 
+            //set level tracker
+            level = 1;
+
             //set all button presses to false.
             leftArrowDown = rightArrowDown = false;
 
@@ -77,21 +82,50 @@ namespace BrickBreaker
             int ballSize = 20;
             ball = new Ball(ballX, ballY, xSpeed, ySpeed, ballSize);
 
-            #region Creates blocks for generic level. Need to replace with code that loads levels.
-            
-            //TODO - replace all the code in this region eventually with code that loads levels from xml files
-            
-            blocks.Clear();
-            int x = 10;
+            //#region Creates blocks for generic level. Need to replace with code that loads levels.
 
-            while (blocks.Count < 12)
+            ////TODO - replace all the code in this region eventually with code that loads levels from xml files
+
+            //blocks.Clear();
+            //int x = 10;
+
+            //while (blocks.Count < 12)
+            //{
+            //    x += 57;
+            //    Block b1 = new Block(x, 10, 1, Color.White);
+            //    blocks.Add(b1);
+            //}
+
+            //#endregion
+
+            XmlReader reader = XmlReader.Create("Resources/brickTest.xml");
+
+            while (reader.Read())
             {
-                x += 57;
-                Block b1 = new Block(x, 10, 1, Color.White);
-                blocks.Add(b1);
+                int x, y, hp;
+                Color color = Color.DarkRed;
+                string test;
+
+                reader.ReadToFollowing("X");
+                test = reader.ReadString();
+                
+                if(test == "")
+                {
+                    break;
+                }
+                
+                x = Convert.ToInt32(test);
+                
+                reader.ReadToNextSibling("Y");
+                y = Convert.ToInt32(reader.ReadString());
+
+                reader.ReadToNextSibling("HP");
+                hp = Convert.ToInt32(reader.ReadString());
+
+                blocks.Add(new Block(x, y, hp, color));
             }
 
-            #endregion
+            reader.Close();
 
             // start the game engine loop
             gameTimer.Enabled = true;
