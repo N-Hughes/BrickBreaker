@@ -92,9 +92,9 @@ namespace BrickBreaker
             blocks.Clear();
             int x = 10;
 
-            while (blocks.Count < 30) //originally 12, changed to test collision, Kian
+            while (blocks.Count < 13)
             {
-                x += 57;
+                x += 87;
                 Block b1 = new Block(x, 10, 1, Color.White);
                 blocks.Add(b1);
             }
