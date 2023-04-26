@@ -82,7 +82,6 @@ namespace BrickBreaker
             int ballSize = 20;
             ball = new Ball(ballX, ballY, xSpeed, ySpeed, ballSize);
 
-
             //ball launch - Kian
             ball.canMove = false;
 
@@ -276,12 +275,17 @@ namespace BrickBreaker
             e.Graphics.FillRectangle(ballBrush, ball.x, ball.y, ball.size, ball.size);
         }
 
-
-
-
         public void Noah()
         {
-
+            Random randGen = new Random();
+            int chance = randGen.Next(1, 4);
+            foreach (Block b in blocks)
+            {
+                if (ball.BlockCollision(b) && chance == 2)
+                {
+                    //Powerup.SpawnUp(chance);
+                }
+            }
         }
     }
 }
