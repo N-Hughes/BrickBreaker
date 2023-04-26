@@ -18,6 +18,7 @@ namespace BrickBreaker
 
         Random randGen = new Random();
 
+
         public Powerup(int x_, int y_, int powerNumber_)
         {
             x = x_;
@@ -29,6 +30,7 @@ namespace BrickBreaker
         public void SpawnUp(int powerNumber_)
         {
             powerNumber = powerNumber_;
+            powerNumber = randGen.Next(1, 5);
 
             if ()
             {

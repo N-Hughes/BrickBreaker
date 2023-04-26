@@ -213,6 +213,15 @@ namespace BrickBreaker
         public void Noah()
         {
 
+            Random randGen = new Random();
+            int chance = randGen.Next(1, 4);
+            foreach(Block b in blocks)
+            {
+                if (ball.BlockCollision(b) && chance == 2)
+                {
+                    
+                }
+            }
 
         }
     }
