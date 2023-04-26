@@ -12,9 +12,14 @@ namespace BrickBreaker
 {
     public partial class MenuScreen : UserControl
     {
+        List<string> messageList = new List<string>();
+
+       
         public MenuScreen()
         {
             InitializeComponent();
+            messageSet();
+
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -33,5 +38,26 @@ namespace BrickBreaker
 
             gs.Location = new Point((form.Width - gs.Width) / 2, (form.Height - gs.Height) / 2);
         }
+
+        public void messageSet()
+        {
+            messageList.Add("Now in Colour!");
+            messageList.Add("watch out for AI");
+            messageList.Add(" Java > Bedrock");
+            messageList.Add("If your reading this its too late");
+            messageList.Add("Bradyens an opp");
+            messageList.Add("Creeper gonna creep");
+
+
+
+            Random rnd = new Random();
+            int random = rnd.Next(0, 6);
+
+            subtitleLabel.Text = $"{messageList[random]}\n";
+
+
+        }
+
+
     }
 }
