@@ -85,50 +85,52 @@ namespace BrickBreaker
 
             //ball launch - Kian
             ball.canMove = false;
-            //#region Creates blocks for generic level. Need to replace with code that loads levels.
+
+            ////#region Creates blocks for generic level. Need to replace with code that loads levels.
 
             //TODO - replace all the code in this region eventually with code that loads levels from xml files
 
-            //blocks.Clear();
-            //int x = 10;
+            blocks.Clear();
+            int x = 10;
 
-            //while (blocks.Count < 30) //originally 12, changed to test collision, Kian
-            //{
-            //    x += 57;
-            //    Block b1 = new Block(x, 10, 1, Color.White);
-            //    blocks.Add(b1);
-            //}
+            while (blocks.Count < 30) //originally 12, changed to test collision, Kian
+            {
+                x += 57;
+                Block b1 = new Block(x, 10, 1, Color.White);
+                blocks.Add(b1);
+            }
 
             //#endregion
 
-            XmlReader reader = XmlReader.Create("Resources/brickTest.xml");
+            //XMLReader code: we will use this once the first level has been built
+            //XmlReader reader = XmlReader.Create("Resources/brickTest.xml");
 
-            while (reader.Read())
-            {
-                int x, y, hp;
-                Color color = Color.DarkRed;
-                string test;
+            //while (reader.Read())
+            //{
+            //    int x, y, hp;
+            //    Color color = Color.DarkRed;
+            //    string test;
 
-                reader.ReadToFollowing("X");
-                test = reader.ReadString();
-                
-                if(test == "")
-                {
-                    break;
-                }
-                
-                x = Convert.ToInt32(test);
-                
-                reader.ReadToNextSibling("Y");
-                y = Convert.ToInt32(reader.ReadString());
+            //    reader.ReadToFollowing("X");
+            //    test = reader.ReadString();
 
-                reader.ReadToNextSibling("HP");
-                hp = Convert.ToInt32(reader.ReadString());
+            //    if(test == "")
+            //    {
+            //        break;
+            //    }
 
-                blocks.Add(new Block(x, y, hp, color));
-            }
+            //    x = Convert.ToInt32(test);
 
-            reader.Close();
+            //    reader.ReadToNextSibling("Y");
+            //    y = Convert.ToInt32(reader.ReadString());
+
+            //    reader.ReadToNextSibling("HP");
+            //    hp = Convert.ToInt32(reader.ReadString());
+
+            //    blocks.Add(new Block(x, y, hp, color));
+            //}
+
+            //reader.Close();
 
             // start the game engine loop
             gameTimer.Enabled = true;
