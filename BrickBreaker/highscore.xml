@@ -1,1 +1,27 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HighScores>
+	<Player>
+		<Name>player1</Name>
+		<score>1000</score>
+	</Player>
+	<Player>
+		<Name>player2</Name>
+		<score>900</score>
+	</Player>
+	<Player>
+		<Name>player3</Name>
+		<score>800</score>
+	</Player>
+	<Player>
+		<Name>player4</Name>
+		<score>700</score>
+	</Player>
+	<Player>
+		<Name>player5</Name>
+		<score>600</score>
+	</Player>
+	<Player>
+		<Name>player6</Name>
+		<score>500</score>
+	</Player>
+</HighScores>
