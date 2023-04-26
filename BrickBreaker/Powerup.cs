@@ -23,16 +23,16 @@ namespace BrickBreaker
         {
             x = x_;
             y = y_;
-
+            powerNumber = powerNumber_;
 
         }
 
         public void SpawnUp(int powerNumber_)
         {
             powerNumber = powerNumber_;
-            powerNumber = randGen.Next(1, 5);
+            //powerNumber = randGen.Next(1, 5);
 
-            if ()
+            if (powerNumber == 1)
             {
 
             }

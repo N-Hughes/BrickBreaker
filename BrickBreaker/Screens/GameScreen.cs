@@ -1,7 +1,7 @@
 ﻿/*  Created by: 
  *  Project: Brick Breaker
  *  Date: 
- */ 
+ */
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -73,9 +73,9 @@ namespace BrickBreaker
             ball = new Ball(ballX, ballY, xSpeed, ySpeed, ballSize);
 
             #region Creates blocks for generic level. Need to replace with code that loads levels.
-            
+
             //TODO - replace all the code in this region eventually with code that loads levels from xml files
-            
+
             blocks.Clear();
             int x = 10;
 
@@ -187,7 +187,7 @@ namespace BrickBreaker
             // Goes to the game over screen
             Form form = this.FindForm();
             MenuScreen ps = new MenuScreen();
-            
+
             ps.Location = new Point((form.Width - ps.Width) / 2, (form.Height - ps.Height) / 2);
 
             form.Controls.Add(ps);
@@ -215,11 +215,11 @@ namespace BrickBreaker
 
             Random randGen = new Random();
             int chance = randGen.Next(1, 4);
-            foreach(Block b in blocks)
+            foreach (Block b in blocks)
             {
                 if (ball.BlockCollision(b) && chance == 2)
                 {
-                    
+                    //Powerup.SpawnUp(chance);
                 }
             }
 
