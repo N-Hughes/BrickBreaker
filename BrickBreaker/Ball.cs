@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Xml.XPath;
 
 namespace BrickBreaker
 {
     public class Ball
     {
+        public bool canMove;
         public int x, y, xSpeed, ySpeed, size;
         public Color colour;
 
@@ -23,6 +25,7 @@ namespace BrickBreaker
 
         public void Move()
         {
+            if (canMove == false) { return; }
             x = x + xSpeed;
             y = y + ySpeed;
         }
@@ -34,21 +37,55 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(blockRec))
             {
+                if (x + (size / 2) <= b.x || x + (size / 2)>= b.x + b.width)
+                {
+                    xSpeed *= -1;
+                    if(xSpeed > 0)
+                    {
+                        b.x = b.x - size;
+                    }
+                    else if (xSpeed < 0)
+                    {
+                        b.x = b.x + size;
+                    }
+                }
+                else
+                {
                 ySpeed *= -1;
-            }
+                     if (ySpeed > 0)
+                    {
+                        b.y = b.y + size;
+                    }
+                    else if(ySpeed < 0)
+                    {
+                        b.y = b.y - size;
+                    }
+                }   
+
+                }
 
             return blockRec.IntersectsWith(ballRec);
         }
 
-        public void PaddleCollision(Paddle p)
+        public bool PaddleCollision(Paddle p)
         {
             Rectangle ballRec = new Rectangle(x, y, size, size);
             Rectangle paddleRec = new Rectangle(p.x, p.y, p.width, p.height);
 
             if (ballRec.IntersectsWith(paddleRec))
             {
+                if (ySpeed > 0)
+                {
+                    y = p.y - size;
+                }
+                else if (ySpeed < 0)
+                {
+                    y = p.y + size;
+                }
                 ySpeed *= -1;
             }
+
+            return paddleRec.IntersectsWith(ballRec);
         }
 
         public void WallCollision(UserControl UC)
