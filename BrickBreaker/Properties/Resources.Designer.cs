@@ -110,7 +110,8 @@ namespace BrickBreaker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to         ///€PFFTM†Ôšy6ˆGDEF)¥6hOS/2h Ž
+        ///   Looks up a localized string similar to 
+        ///€PFFTM†Ôšy6ˆGDEF)¥6hOS/2h Ž
         ///X`cmapT,Rgaspÿÿ6`glyfíˆZ‡À)8head‹PÜ6hhea
         ///X$hmtxPu¸tlocaúÕü€@maxpë;8 nameŸ=ù0ø®post{÷Î°4¨¶U¼^_&lt;õèÖ&amp;–Ö&amp;–ÿ8 ¼èÿ8„ ›Ÿ8
         ///@9ŠXKŠX^2,UKWNÀ &amp;f ÿ8ÈèÈô¼ dMÈôXXXX,ôôôXÈXÈ [rest of string was truncated]&quot;;.
