@@ -18,7 +18,6 @@ namespace BrickBreaker
         public MenuScreen()
         {
             InitializeComponent();
-            messageSet();
 
         }
 
@@ -58,6 +57,10 @@ namespace BrickBreaker
 
         }
 
+        private void MenuScreen_Load(object sender, EventArgs e)
+        {
+            messageSet();
 
+        }
     }
 }

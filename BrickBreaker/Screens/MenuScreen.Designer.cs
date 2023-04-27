@@ -151,6 +151,7 @@
             this.Controls.Add(this.playButton);
             this.Name = "MenuScreen";
             this.Size = new System.Drawing.Size(1386, 788);
+            this.Load += new System.EventHandler(this.MenuScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
