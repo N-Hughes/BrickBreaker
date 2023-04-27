@@ -160,6 +160,12 @@
   <ItemGroup>
     <None Include="Resources\Sdss-edition-4-26-2023 %282%29 %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="highscore.xml" />
+    <None Include="Resources\brickTest.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
