@@ -119,7 +119,7 @@
             this.subtitleLabel.BackColor = System.Drawing.Color.Transparent;
             this.subtitleLabel.Font = new System.Drawing.Font("Minecraft", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subtitleLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.subtitleLabel.Location = new System.Drawing.Point(915, 244);
+            this.subtitleLabel.Location = new System.Drawing.Point(929, 199);
             this.subtitleLabel.Name = "subtitleLabel";
             this.subtitleLabel.Size = new System.Drawing.Size(70, 27);
             this.subtitleLabel.TabIndex = 6;
