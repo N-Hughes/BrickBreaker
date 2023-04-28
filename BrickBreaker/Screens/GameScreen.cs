@@ -82,7 +82,6 @@ namespace BrickBreaker
             int ballSize = 20;
             ball = new Ball(ballX, ballY, xSpeed, ySpeed, ballSize);
 
-
             //ball launch - Kian
             ball.canMove = false;
 
@@ -90,47 +89,47 @@ namespace BrickBreaker
 
             //TODO - replace all the code in this region eventually with code that loads levels from xml files
 
-            blocks.Clear();
-            int x = 10;
+            //blocks.Clear();
+            //int x = 10;
 
-            while (blocks.Count < 30) //originally 12, changed to test collision, Kian
-            {
-                x += 57;
-                Block b1 = new Block(x, 10, 1, Color.White);
-                blocks.Add(b1);
-            }
+            //while (blocks.Count < 13)
+            //{
+            //    x += 87;
+            //    Block b1 = new Block(x, 10, 1, Color.White);
+            //    blocks.Add(b1);
+            //}
 
             //#endregion
 
             //XMLReader code: we will use this once the first level has been built
-            //XmlReader reader = XmlReader.Create("Resources/brickTest.xml");
+            XmlReader reader = XmlReader.Create("Resources/level1.xml");
 
-            //while (reader.Read())
-            //{
-            //    int x, y, hp;
-            //    Color color = Color.DarkRed;
-            //    string test;
+            while (reader.Read())
+            {
+                int x, y, hp;
+                Color color = Color.DarkRed;
+                string test;
 
-            //    reader.ReadToFollowing("X");
-            //    test = reader.ReadString();
+                reader.ReadToFollowing("X");
+                test = reader.ReadString();
 
-            //    if(test == "")
-            //    {
-            //        break;
-            //    }
+                if (test == "")
+                {
+                    break;
+                }
 
-            //    x = Convert.ToInt32(test);
+                x = Convert.ToInt32(test);
 
-            //    reader.ReadToNextSibling("Y");
-            //    y = Convert.ToInt32(reader.ReadString());
+                reader.ReadToNextSibling("Y");
+                y = Convert.ToInt32(reader.ReadString());
 
-            //    reader.ReadToNextSibling("HP");
-            //    hp = Convert.ToInt32(reader.ReadString());
+                reader.ReadToNextSibling("HP");
+                hp = Convert.ToInt32(reader.ReadString());
 
-            //    blocks.Add(new Block(x, y, hp, color));
-            //}
+                blocks.Add(new Block(x, y, hp, color));
+            }
 
-            //reader.Close();
+            reader.Close();
 
             // start the game engine loop
             gameTimer.Enabled = true;
@@ -276,12 +275,17 @@ namespace BrickBreaker
             e.Graphics.FillRectangle(ballBrush, ball.x, ball.y, ball.size, ball.size);
         }
 
-
-
-
         public void Noah()
         {
-
+            Random randGen = new Random();
+            int chance = randGen.Next(1, 4);
+            foreach (Block b in blocks)
+            {
+                if (ball.BlockCollision(b) && chance == 2)
+                {
+                    //Powerup.SpawnUp(chance);
+                }
+            }
         }
     }
 }
