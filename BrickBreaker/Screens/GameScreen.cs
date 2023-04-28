@@ -283,6 +283,7 @@ namespace BrickBreaker
             {
                 ball.canMove = true;
             }
+            
         }
 
         public void Noah()

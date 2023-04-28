@@ -8,12 +8,12 @@ namespace BrickBreaker
     public class Ball
     {
         public bool canMove;
-        public int x, y, xSpeed, ySpeed, size;
+        public int x, y, size;
         public Color colour;
-
+        public double xSpeed, ySpeed;
         public static Random rand = new Random();
 
-        public Ball(int _x, int _y, int _xSpeed, int _ySpeed, int _ballSize)
+        public Ball(int _x, int _y, double _xSpeed, double _ySpeed, int _ballSize)
         {
             x = _x;
             y = _y;
@@ -26,8 +26,8 @@ namespace BrickBreaker
         public void Move()
         {
             if (canMove == false) { return; }
-            x = x + xSpeed;
-            y = y + ySpeed;
+            x = x + Convert.ToInt32(xSpeed);
+            y = y + Convert.ToInt32(ySpeed);
         }
 
         public bool BlockCollision(Block b)
@@ -76,13 +76,13 @@ namespace BrickBreaker
             {
                 if (p.x + (p.width / 2) >= x) // hits left
                 {
-                    xSpeed = -Math.Abs(xSpeed);
+                    xSpeed = Math.Abs(xSpeed);
                     ySpeed *= -1;
                     y = p.y - size;
                 }
                 else if (p.x + (p.width / 2) <= x) //hits right
                 {
-                    xSpeed = Math.Abs(xSpeed);
+                    xSpeed = -Math.Abs(xSpeed);
                     ySpeed *= -1;
                     y = p.y - size;
                 }
@@ -94,7 +94,7 @@ namespace BrickBreaker
         public void WallCollision(UserControl UC)
         {
             // Collision with left wall
-            if (x <= 0)
+            if (x <= 1)
             {
                 xSpeed *= -1;
             }
