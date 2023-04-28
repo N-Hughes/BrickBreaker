@@ -82,10 +82,8 @@ namespace BrickBreaker
             int ballSize = 20;
             ball = new Ball(ballX, ballY, xSpeed, ySpeed, ballSize);
 
-            //ball launch - Kian
-            ball.canMove = false;
-
-            ////#region Creates blocks for generic level. Need to replace with code that loads levels.
+            KianOnStart();
+            //#region Creates blocks for generic level. Need to replace with code that loads levels.
 
             //TODO - replace all the code in this region eventually with code that loads levels from xml files
 
@@ -175,16 +173,7 @@ namespace BrickBreaker
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
-            // Move ball to paddle when it needs to stick to it
-            if (ball.canMove == false)
-            {
-                ball.x = paddle.x + (paddle.width / 2) - (ball.size / 2);
-                ball.y = paddle.y - paddle.height;
-            }
-            if (spaceDown == true) //launch ball
-            {
-                ball.canMove = true;
-            }
+            KianGameTimer();
 
             //test
             cam();
@@ -275,6 +264,27 @@ namespace BrickBreaker
             e.Graphics.FillRectangle(ballBrush, ball.x, ball.y, ball.size, ball.size);
         }
 
+        public void KianOnStart()
+        {
+            // ball launch - Kian
+            ball.canMove = false;
+        }
+
+        public void KianGameTimer()
+        {
+            // Move ball to paddle when it needs to stick to it
+            if (ball.canMove == false)
+            {
+                ball.x = paddle.x + (paddle.width / 2) - (ball.size / 2);
+                ball.y = paddle.y - paddle.height;
+            }
+            if (spaceDown == true) //launch ball
+            {
+                ball.canMove = true;
+            }
+            
+        }
+        
         public void Noah()
         {
             Random randGen = new Random();
