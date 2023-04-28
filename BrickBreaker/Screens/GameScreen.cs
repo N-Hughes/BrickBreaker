@@ -45,16 +45,15 @@ namespace BrickBreaker
         {
             InitializeComponent();
             OnStart();
-
         }
 
-       public void cam()
+        public void cam()
         {
 
         }
+
         public void OnStart()
         {
-          
             //set life counter
             lives = 3;
 
@@ -100,34 +99,7 @@ namespace BrickBreaker
             //#endregion
 
             //XMLReader code: we will use this once the first level has been built
-            XmlReader reader = XmlReader.Create("Resources/level1.xml");
-
-            while (reader.Read())
-            {
-                int x, y, hp;
-                Color color = Color.DarkRed;
-                string test;
-
-                reader.ReadToFollowing("X");
-                test = reader.ReadString();
-
-                if (test == "")
-                {
-                    break;
-                }
-
-                x = Convert.ToInt32(test);
-
-                reader.ReadToNextSibling("Y");
-                y = Convert.ToInt32(reader.ReadString());
-
-                reader.ReadToNextSibling("HP");
-                hp = Convert.ToInt32(reader.ReadString());
-
-                blocks.Add(new Block(x, y, hp, color));
-            }
-
-            reader.Close();
+            MariaOnStart(level);
 
             // start the game engine loop
             gameTimer.Enabled = true;
@@ -296,6 +268,38 @@ namespace BrickBreaker
                     //Powerup.SpawnUp(chance);
                 }
             }
+        }
+
+        public void MariaOnStart(int num)
+        {
+            XmlReader reader = XmlReader.Create($"Resources/level{num}.xml");
+
+            while (reader.Read())
+            {
+                int x, y, hp;
+                string image = "";
+                string test;
+
+                reader.ReadToFollowing("X");
+                test = reader.ReadString();
+
+                if (test == "")
+                {
+                    break;
+                }
+
+                x = Convert.ToInt32(test);
+
+                reader.ReadToNextSibling("Y");
+                y = Convert.ToInt32(reader.ReadString());
+
+                reader.ReadToNextSibling("HP");
+                hp = Convert.ToInt32(reader.ReadString());
+
+                blocks.Add(new Block(x, y, hp, image));
+            }
+
+            reader.Close();
         }
     }
 }
