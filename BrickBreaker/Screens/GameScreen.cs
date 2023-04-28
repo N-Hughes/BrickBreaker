@@ -82,7 +82,6 @@ namespace BrickBreaker
             int ballSize = 20;
             ball = new Ball(ballX, ballY, xSpeed, ySpeed, ballSize);
 
-
             KianOnStart();
             //#region Creates blocks for generic level. Need to replace with code that loads levels.
 
@@ -91,16 +90,17 @@ namespace BrickBreaker
             //blocks.Clear();
             //int x = 10;
 
-            //while (blocks.Count < 30) //originally 12, changed to test collision, Kian
+            //while (blocks.Count < 13)
             //{
-            //    x += 57;
+            //    x += 87;
             //    Block b1 = new Block(x, 10, 1, Color.White);
             //    blocks.Add(b1);
             //}
 
             //#endregion
 
-            XmlReader reader = XmlReader.Create("Resources/brickTest.xml");
+            //XMLReader code: we will use this once the first level has been built
+            XmlReader reader = XmlReader.Create("Resources/level1.xml");
 
             while (reader.Read())
             {
@@ -110,14 +110,14 @@ namespace BrickBreaker
 
                 reader.ReadToFollowing("X");
                 test = reader.ReadString();
-                
-                if(test == "")
+
+                if (test == "")
                 {
                     break;
                 }
-                
+
                 x = Convert.ToInt32(test);
-                
+
                 reader.ReadToNextSibling("Y");
                 y = Convert.ToInt32(reader.ReadString());
 
@@ -264,7 +264,6 @@ namespace BrickBreaker
             e.Graphics.FillRectangle(ballBrush, ball.x, ball.y, ball.size, ball.size);
         }
 
-
         public void KianOnStart()
         {
             // ball launch - Kian
@@ -285,10 +284,18 @@ namespace BrickBreaker
             }
             
         }
-
+        
         public void Noah()
         {
-
+            Random randGen = new Random();
+            int chance = randGen.Next(1, 4);
+            foreach (Block b in blocks)
+            {
+                if (ball.BlockCollision(b) && chance == 2)
+                {
+                    //Powerup.SpawnUp(chance);
+                }
+            }
         }
     }
 }
