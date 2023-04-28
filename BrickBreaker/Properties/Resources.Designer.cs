@@ -90,6 +90,15 @@ namespace BrickBreaker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;Bricks&gt;&lt;brick&gt;&lt;X&gt;963&lt;/X&gt;&lt;Y&gt;111&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;275&lt;/X&gt;&lt;Y&gt;111&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;533&lt;/X&gt;&lt;Y&gt;291&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;619&lt;/X&gt;&lt;Y&gt;291&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;705&lt;/X&gt;&lt;Y&gt;291&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;619&lt;/X&gt;&lt;Y&gt;327&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;877&lt;/X&gt;&lt;Y&gt;255&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;705&lt;/X&gt;&lt;Y&gt;219&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;533&lt;/X&gt;&lt;Y&gt;255&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;533&lt;/X&gt;&lt;Y&gt;219&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;....
+        /// </summary>
+        internal static string level1 {
+            get {
+                return ResourceManager.GetString("level1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
         internal static byte[] Minecraft {
@@ -106,19 +115,6 @@ namespace BrickBreaker.Properties {
             get {
                 object obj = ResourceManager.GetObject("minecraftBackground1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to 
-        ///€PFFTM†Ôšy6ˆGDEF)¥6hOS/2h Ž
-        ///X`cmapT,Rgaspÿÿ6`glyfíˆZ‡À)8head‹PÜ6hhea
-        ///X$hmtxPu¸tlocaúÕü€@maxpë;8 nameŸ=ù0ø®post{÷Î°4¨¶U¼^_&lt;õèÖ&amp;–Ö&amp;–ÿ8 ¼èÿ8„ ›Ÿ8
-        ///@9ŠXKŠX^2,UKWNÀ &amp;f ÿ8ÈèÈô¼ dMÈôXXXX,ôôôXÈXÈ [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string MinecraftRegular_Bmg3 {
-            get {
-                return ResourceManager.GetString("MinecraftRegular_Bmg3", resourceCulture);
             }
         }
     }
