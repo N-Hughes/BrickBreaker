@@ -71,7 +71,42 @@ namespace BrickBreaker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;Bricks&gt;&lt;brick&gt;&lt;X&gt;136&lt;/X&gt;&lt;Y&gt;111&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;50&lt;/X&gt;&lt;Y&gt;111&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;222&lt;/X&gt;&lt;Y&gt;39&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;184&lt;/X&gt;&lt;Y&gt;75&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;12&lt;/X&gt;&lt;Y&gt;75&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;98&lt;/X&gt;&lt;Y&gt;75&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;136&lt;/X&gt;&lt;Y&gt;39&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;50&lt;/X&gt;&lt;Y&gt;39&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;184&lt;/X&gt;&lt;Y&gt;3&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;98&lt;/X&gt;&lt;Y&gt;3&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;12&lt;....
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;Bricks&gt;
+        ///  &lt;brick&gt;
+        ///    &lt;X&gt;136&lt;/X&gt;
+        ///    &lt;Y&gt;111&lt;/Y&gt;
+        ///    &lt;HP&gt;1&lt;/HP&gt;
+        ///  &lt;/brick&gt;
+        ///  &lt;brick&gt;
+        ///    &lt;X&gt;50&lt;/X&gt;
+        ///    &lt;Y&gt;111&lt;/Y&gt;
+        ///    &lt;HP&gt;1&lt;/HP&gt;
+        ///  &lt;/brick&gt;
+        ///  &lt;brick&gt;
+        ///    &lt;X&gt;222&lt;/X&gt;
+        ///    &lt;Y&gt;39&lt;/Y&gt;
+        ///    &lt;HP&gt;1&lt;/HP&gt;
+        ///  &lt;/brick&gt;
+        ///  &lt;brick&gt;
+        ///    &lt;X&gt;184&lt;/X&gt;
+        ///    &lt;Y&gt;75&lt;/Y&gt;
+        ///    &lt;HP&gt;1&lt;/HP&gt;
+        ///  &lt;/brick&gt;
+        ///  &lt;brick&gt;
+        ///    &lt;X&gt;12&lt;/X&gt;
+        ///    &lt;Y&gt;75&lt;/Y&gt;
+        ///    &lt;HP&gt;1&lt;/HP&gt;
+        ///  &lt;/brick&gt;
+        ///  &lt;brick&gt;
+        ///    &lt;X&gt;98&lt;/X&gt;
+        ///    &lt;Y&gt;75&lt;/Y&gt;
+        ///    &lt;HP&gt;1&lt;/HP&gt;
+        ///  &lt;/brick&gt;
+        ///  &lt;brick&gt;
+        ///    &lt;X&gt;136&lt;/X&gt;
+        ///    &lt;Y&gt;39&lt;/Y&gt;
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string brickTest {
             get {
@@ -114,6 +149,26 @@ namespace BrickBreaker.Properties {
         internal static System.Drawing.Bitmap minecraftBackground1 {
             get {
                 object obj = ResourceManager.GetObject("minecraftBackground1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraftHeart {
+            get {
+                object obj = ResourceManager.GetObject("minecraftHeart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraftScreen {
+            get {
+                object obj = ResourceManager.GetObject("minecraftScreen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

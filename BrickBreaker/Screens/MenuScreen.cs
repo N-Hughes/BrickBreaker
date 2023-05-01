@@ -19,6 +19,10 @@ namespace BrickBreaker
         {
             InitializeComponent();
 
+            playButton.Font = Form1.myFont;
+            hardButton.Font = Form1.myFont;
+            exitButton.Font = Form1.myFont;
+            subtitleLabel.Font = Form1.myFont;
         }
 
         private void exitButton_Click(object sender, EventArgs e)
