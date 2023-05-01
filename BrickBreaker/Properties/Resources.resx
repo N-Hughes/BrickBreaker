@@ -6379,8 +6379,30 @@
         jfGz48M+x5rJb4bZdks//9k=
 </value>
   </data>
-  <data name="minecraftHeart" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minecraftHeart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="minecraftHeart" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGPC/xhBQAABKFJREFUWEft
+        mD1oFEEYhmf2LpgEqxACFgkKVqKQRqwCikUKg4ggNmKhdlqYwkKIYKlV0likkXRiY2GVFApqIShpggo2
+        QkAsIoJcYSHq+D6zN2Gy+S65u1wwhcWD5tv5eff7m9lzkzen9jSmcS9hGnP6i+K49/6CSVEcsebk1Or1
+        /TXvz1jzsfPcmpcwjTn7vZ93zgXv3K8cbPu8v2PNSRSDg76o1UY1drW6Bn+Lte1e0jQODA7Wa7XakBYf
+        kcCFES1mccj7+4yJYyUmXwPP8IwIDDv31ZqPXc8n4hotPLnJAEzQWy7pDT/ec+77Ry1mcVseYIzC9bi6
+        gfP+Es8OO/fplXO/83kr4rXQBoHnzTWu5vPX17GMErgeFsU3KBYmdwVjxHJVoDa8zrOD4ovI5/0U38QH
+        wXPGKVK38vmJDX8QDq08R97huVlNXD5wIISjR0OYmAhherqE/8vGM8bgyZirmps45/0znj0UDVEV+MP7
+        KPKB4EXPev+SebxYX19fvylQAwhLzA+5r1xwfDyE8+dDmJkJYWWlBJHYEK4xb8WAaHozckPE+VvwRyAe
+        oYyPcyV0g0CSm0oiWUn6kxp0UXwZGgpheDiEyclSEALn50sQhxfHxuJG5JWWCsxN4L1cjAUCEadEjl48
+        Jsade0f7QQ/FFyuWJKf0L2sArocoDCEIwmv8OzBQUq+XaHzaKM1LEMZcjEUukMKhmHixfc79kDfXiqI4
+        XQp07gnuRWCcjIiqwNnZDaJ6QS7wvaCyyclmujRaCyS0CFtcDOHatTLXmuHsJTsTiDg8hxeTvcfsTGAq
+        Cooh2XtM9wLzHNyF0CZ2JhDPIXJPCoRKK9kN2heoPpgE0r+AydUFe00SyFmd+iAC5TCuY6VAThLOYLo3
+        JwknAkKrB3wvwQHpiMNziOMkOSE4SeSweJnlVtXyLNYdyFy8FyCQsOIEznFCy/HK3pvOYksgV6D/AkXH
+        Aom9Bq2OOfeZhOXKVb3L7QSKArhMII71uVU/de6PpGgrt0rBthTY/I4YpWgQiScfCWuzbkiFgTA8hzgK
+        g5xvft+MUhj5980GgYl2r/ydgkBCS/oQVjzX0ZU/gScJt7iqq/sL2g73NHKnuul2EFKEAcJoK0RFW0OD
+        T1f2afX5uclQJX5raDFuyd0071QQQL8jtNnHVnffxTl6u+vq7EunnHtDSMgbvJGLsEAYUBDkHN7Dc0Ti
+        CsK0JgVBOln7JkxjDkchSRt/vtARRELjCUtUDsKqrYSw4jnOfio1rW3tmzCNFvFc1JvzawAtCC8ioios
+        tRKe560EtJ3MrqG0WUCctU8V02gRC6f59cd5yReYVeEIo5UQUjxHWtBKqFYqlTViO9nGcwnTuBUIlReW
+        CRXJXhWYrk98ihJW8o60YDwnFWu0Kw5M41aQO7QF2oP60HNEckVCGN7Dc4hDGO2JgqAJx3ayTcVamMZ2
+        YVM8Q7gRlreS9V8K1PA5Haz57WAa2wVPSsAyOZlaEJ7j9xg8xzMq9p8JJNzkJIUjMQ2u6gkaPM+gk5yr
+        Yho7hcuFBK7xkwXQL+XeOWtsp5jGTklepFcmuikIC9O4d5hyfwEL5Zlsjls0FwAAAABJRU5ErkJggg==
+</value>
   </data>
   <data name="minecraftScreen" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
