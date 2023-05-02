@@ -79,7 +79,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BackgroundImage = global::BrickBreaker.Properties.Resources.plainsBackground__1_;
             this.Controls.Add(this.livesBox3);
             this.Controls.Add(this.livesBox2);
             this.Controls.Add(this.livesBox1);

@@ -288,22 +288,21 @@ namespace BrickBreaker
                 reader.ReadToNextSibling("HP");
                 hp = Convert.ToInt32(reader.ReadString());
 
-                switch (hp)
-                {
-                    case 1:
-                        //image = 
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        break;
-                    case 4:
-                        break;
-                    case 5:
-                        break;
-                    case 10:
-                        break;
-                }
+                //switch (hp)
+                //{
+                //    case 1:
+                //        break;
+                //    case 2:
+                //        break;
+                //    case 3:
+                //        break;
+                //    case 4:
+                //        break;
+                //    case 5:
+                //        break;
+                //    case 10:
+                //        break;
+                //}
 
                 blocks.Add(new Block(x, y, hp, image));
             }
