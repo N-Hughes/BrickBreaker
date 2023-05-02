@@ -162,11 +162,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="highscore.xml" />
-    <None Include="Resources\minecraftHeart.png" />
-    <None Include="Resources\minecraftScreen.jpg" />
     <None Include="Resources\level1.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\minecraftHeart.png" />
+    <None Include="Resources\minecraftScreen.jpg" />
     <None Include="Resources\brickTest.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
