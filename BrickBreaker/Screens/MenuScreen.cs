@@ -14,11 +14,14 @@ namespace BrickBreaker
     {
         List<string> messageList = new List<string>();
 
-       
         public MenuScreen()
         {
             InitializeComponent();
 
+            playButton.Font = Form1.myFont;
+            hardButton.Font = Form1.myFont;
+            exitButton.Font = Form1.myFont;
+            subtitleLabel.Font = Form1.myFont;
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -47,14 +50,10 @@ namespace BrickBreaker
             messageList.Add("Bradyens an opp");
             messageList.Add("Creeper gonna creep");
 
-
-
             Random rnd = new Random();
             int random = rnd.Next(0, 6);
 
             subtitleLabel.Text = $"{messageList[random]}\n";
-
-
         }
 
         private void MenuScreen_Load(object sender, EventArgs e)

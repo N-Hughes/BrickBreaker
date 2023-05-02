@@ -32,7 +32,7 @@
             this.playButton = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.hardbutton = new System.Windows.Forms.Button();
+            this.hardButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.subtitleLabel = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.playButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.playButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.playButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.playButton.Font = new System.Drawing.Font("Minecraft", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.playButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.playButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.playButton.Location = new System.Drawing.Point(424, 330);
             this.playButton.Name = "playButton";
@@ -74,28 +74,28 @@
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
             // 
-            // hardbutton
+            // hardButton
             // 
-            this.hardbutton.BackColor = System.Drawing.Color.DimGray;
-            this.hardbutton.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.hardbutton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.hardbutton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
-            this.hardbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.hardbutton.Font = new System.Drawing.Font("Minecraft", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hardbutton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.hardbutton.Location = new System.Drawing.Point(424, 403);
-            this.hardbutton.Name = "hardbutton";
-            this.hardbutton.Size = new System.Drawing.Size(591, 57);
-            this.hardbutton.TabIndex = 4;
-            this.hardbutton.Text = "Hardcore Mode";
-            this.hardbutton.UseVisualStyleBackColor = false;
+            this.hardButton.BackColor = System.Drawing.Color.DimGray;
+            this.hardButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.hardButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.hardButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.hardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.hardButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hardButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.hardButton.Location = new System.Drawing.Point(424, 403);
+            this.hardButton.Name = "hardButton";
+            this.hardButton.Size = new System.Drawing.Size(591, 57);
+            this.hardButton.TabIndex = 4;
+            this.hardButton.Text = "Hardcore Mode";
+            this.hardButton.UseVisualStyleBackColor = false;
             // 
             // exitButton
             // 
             this.exitButton.BackColor = System.Drawing.Color.DimGray;
             this.exitButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.exitButton.Font = new System.Drawing.Font("Minecraft", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.exitButton.Location = new System.Drawing.Point(424, 479);
             this.exitButton.Name = "exitButton";
@@ -117,11 +117,11 @@
             // 
             this.subtitleLabel.AutoSize = true;
             this.subtitleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.subtitleLabel.Font = new System.Drawing.Font("Minecraft", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subtitleLabel.ForeColor = System.Drawing.Color.Yellow;
-            this.subtitleLabel.Location = new System.Drawing.Point(929, 199);
+            this.subtitleLabel.Location = new System.Drawing.Point(967, 78);
             this.subtitleLabel.Name = "subtitleLabel";
-            this.subtitleLabel.Size = new System.Drawing.Size(70, 27);
+            this.subtitleLabel.Size = new System.Drawing.Size(68, 31);
             this.subtitleLabel.TabIndex = 6;
             this.subtitleLabel.Text = "Test";
             this.subtitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -141,11 +141,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BackgroundImage = global::BrickBreaker.Properties.Resources.minecraftBackground1;
+            this.BackgroundImage = global::BrickBreaker.Properties.Resources.minecraftScreen;
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.subtitleLabel);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.hardbutton);
+            this.Controls.Add(this.hardButton);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.playButton);
@@ -164,7 +164,7 @@
         private System.Windows.Forms.Button playButton;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button hardbutton;
+        private System.Windows.Forms.Button hardButton;
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label subtitleLabel;
