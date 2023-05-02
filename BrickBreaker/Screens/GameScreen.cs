@@ -269,7 +269,7 @@ namespace BrickBreaker
             while (reader.Read())
             {
                 int x, y, hp;
-                string image = "";
+                Image image = null;
                 string test;
 
                 reader.ReadToFollowing("X");
@@ -291,7 +291,7 @@ namespace BrickBreaker
                 switch (hp)
                 {
                     case 1:
-                        image = 
+                        //image = 
                         break;
                     case 2:
                         break;
