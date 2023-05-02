@@ -46,7 +46,8 @@
             // 
             // livesBox1
             // 
-            this.livesBox1.Location = new System.Drawing.Point(3, 745);
+            this.livesBox1.BackColor = System.Drawing.Color.Transparent;
+            this.livesBox1.Location = new System.Drawing.Point(10, 742);
             this.livesBox1.Name = "livesBox1";
             this.livesBox1.Size = new System.Drawing.Size(40, 40);
             this.livesBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -55,7 +56,8 @@
             // 
             // livesBox2
             // 
-            this.livesBox2.Location = new System.Drawing.Point(49, 745);
+            this.livesBox2.BackColor = System.Drawing.Color.Transparent;
+            this.livesBox2.Location = new System.Drawing.Point(56, 742);
             this.livesBox2.Name = "livesBox2";
             this.livesBox2.Size = new System.Drawing.Size(40, 40);
             this.livesBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -64,7 +66,8 @@
             // 
             // livesBox3
             // 
-            this.livesBox3.Location = new System.Drawing.Point(95, 745);
+            this.livesBox3.BackColor = System.Drawing.Color.Transparent;
+            this.livesBox3.Location = new System.Drawing.Point(102, 742);
             this.livesBox3.Name = "livesBox3";
             this.livesBox3.Size = new System.Drawing.Size(40, 40);
             this.livesBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -76,6 +79,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BackgroundImage = global::BrickBreaker.Properties.Resources.plainsBackground__1_;
             this.Controls.Add(this.livesBox3);
             this.Controls.Add(this.livesBox2);
             this.Controls.Add(this.livesBox1);
