@@ -14,7 +14,6 @@ namespace BrickBreaker
     {
         List<string> messageList = new List<string>();
 
-       
         public MenuScreen()
         {
             InitializeComponent();
@@ -51,14 +50,10 @@ namespace BrickBreaker
             messageList.Add("Bradyens an opp");
             messageList.Add("Creeper gonna creep");
 
-
-
             Random rnd = new Random();
             int random = rnd.Next(0, 6);
 
             subtitleLabel.Text = $"{messageList[random]}\n";
-
-
         }
 
         private void MenuScreen_Load(object sender, EventArgs e)
