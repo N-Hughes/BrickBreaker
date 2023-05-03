@@ -10,28 +10,30 @@ namespace BrickBreaker
         public bool canMove;
         public int x, y, size, prevX, prevY;
         public Color colour;
-        public double xSpeed, ySpeed;
-        public double angle = 90;
+        public int xSpeed, ySpeed;
         public static Random rand = new Random();
+        public int startXSpeed, startYSpeed;
 
 
-        public Ball(int _x, int _y, double _xSpeed, double _ySpeed, int _ballSize)
+        public Ball(int _x, int _y, int _xSpeed, int _ySpeed, int _ballSize)
         {
             x = _x;
             y = _y;
             xSpeed = _xSpeed;
             ySpeed = _ySpeed;
             size = _ballSize;
-           
+            startXSpeed = xSpeed;
+            startYSpeed = ySpeed;
+
+
 
         }
 
         public void Move()
         {
             if (canMove == false) { return; }
-            x = x + Convert.ToInt32(xSpeed);
-            y = y + Convert.ToInt32(ySpeed);
-           
+            x += xSpeed;
+            y += ySpeed;
 
             prevX = x;
             prevY = y;
@@ -83,6 +85,7 @@ namespace BrickBreaker
                     ySpeed *= -1;
                     y = p.y - size;
                 }
+                BounceAngle();
             }
 
             return paddleRec.IntersectsWith(ballRec);
@@ -117,6 +120,23 @@ namespace BrickBreaker
             }
 
             return didCollide;
+        }
+
+        public void BounceAngle()
+        {
+            int num = rand.Next(0, 3);
+            switch (num)
+            {
+                case 0:
+                    xSpeed = startXSpeed - 3;
+                    break;
+                case 1:
+                    xSpeed = startXSpeed;
+                    break;
+                case 2:
+                    xSpeed = startXSpeed + 3;
+                    break;
+            }
         }
 
     }
