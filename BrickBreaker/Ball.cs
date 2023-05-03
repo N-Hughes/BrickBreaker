@@ -31,10 +31,7 @@ namespace BrickBreaker
             if (canMove == false) { return; }
             x = x + Convert.ToInt32(xSpeed);
             y = y + Convert.ToInt32(ySpeed);
-            xSpeed = Math.Sin(angle);
-            ySpeed = Math.Cos(angle);
-            xSpeed = Math.PI / 2 * angle;
-            ySpeed = Math.PI / 2 * angle;
+           
 
             prevX = x;
             prevY = y;
