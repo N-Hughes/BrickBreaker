@@ -73,6 +73,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(paddleRec))
             {
+                BounceAngle();
                 if (p.x + (p.width / 2) >= x) // hits left
                 {
                     xSpeed = -Math.Abs(xSpeed);
@@ -85,7 +86,6 @@ namespace BrickBreaker
                     ySpeed *= -1;
                     y = p.y - size;
                 }
-                BounceAngle();
             }
 
             return paddleRec.IntersectsWith(ballRec);
@@ -124,18 +124,24 @@ namespace BrickBreaker
 
         public void BounceAngle()
         {
-            int num = rand.Next(0, 3);
+            int num = rand.Next(0, 5);
             switch (num)
             {
                 case 0:
                     xSpeed = startXSpeed - 3;
                     break;
                 case 1:
-                    xSpeed = startXSpeed;
+                    xSpeed = startXSpeed - 2;
                     break;
                 case 2:
-                    xSpeed = startXSpeed + 3;
+                    xSpeed = startXSpeed;
                     break;
+                case 3:
+                    xSpeed= startXSpeed + 2;
+                    break;
+                case 4:
+                    xSpeed = startXSpeed + 3;
+                    break; 
             }
         }
 
