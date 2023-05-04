@@ -35,6 +35,8 @@ namespace BrickBreaker
 
         // list of all blocks for current level
         List<Block> blocks = new List<Block>();
+        List<Powerup> powerups = new List<Powerup>();
+
 
         // Brushes
         SolidBrush paddleBrush = new SolidBrush(Color.White);
@@ -172,6 +174,7 @@ namespace BrickBreaker
                 // Moves the ball back to origin
                 ball.x = ((paddle.x - (ball.size / 2)) + (paddle.width / 2));
                 ball.y = (this.Height - paddle.height) - 85;
+                ball.canMove = false; //stop ball each time it resets position
 
                 if (lives == -1)
                 {
@@ -188,6 +191,9 @@ namespace BrickBreaker
             {
                 if (ball.BlockCollision(b))
                 {
+
+                    Noah(b);
+
                     blocks.Remove(b);
                     score++;
 
@@ -200,6 +206,9 @@ namespace BrickBreaker
                     break;
                 }
             }
+
+
+            NoahEngine();
 
             //redraw the screen
             Refresh();
@@ -227,11 +236,21 @@ namespace BrickBreaker
             foreach (Block b in blocks)
             {
                 e.Graphics.FillRectangle(blockBrush, b.x, b.y, b.width, b.height);
-                
+
+                if(b.hp == 1)
+                {
+                    e.Graphics.DrawImage(b.image, b.x, b.y, 80, 30);
+                }
             }
 
             // Draws ball
-            e.Graphics.FillRectangle(ballBrush, ball.x, ball.y, ball.size, ball.size);
+            e.Graphics.FillEllipse(ballBrush, ball.x, ball.y, ball.size, ball.size);
+
+            // Draws PowerUps
+            foreach (Powerup p in powerups)
+            {
+                e.Graphics.FillRectangle(ballBrush, p.x, p.y, 12, 25);
+            }
         }
 
         public void KianOnStart()
@@ -248,25 +267,33 @@ namespace BrickBreaker
                 ball.x = paddle.x + (paddle.width / 2) - (ball.size / 2);
                 ball.y = paddle.y - paddle.height;
             }
-            if (spaceDown == true) //launch ball
+            if (spaceDown) //launch ball
             {
                 ball.canMove = true;
             }
             
         }
         
-        public void Noah()
+        public void Noah(Block b)
         {
             Random randGen = new Random();
-            int chance = randGen.Next(1, 4);
-            foreach (Block b in blocks)
+            int chance = randGen.Next(1, 6);
+            if (true)
             {
-                if (ball.BlockCollision(b) && chance == 2)
-                {
-                    //Powerup.SpawnUp(chance);
-                }
+                Powerup newPowerup = new Powerup(b.x, b.y);
+                powerups.Add(newPowerup);
             }
         }
+
+        public void NoahEngine()
+        {
+            foreach (Powerup p in powerups)
+            {
+                p.Move(p.y, p.height);
+                p.PowerupCollision(paddle);
+            }
+        }
+
 
         public void MariaOnStart()
         {
@@ -294,21 +321,22 @@ namespace BrickBreaker
                 reader.ReadToNextSibling("HP");
                 hp = Convert.ToInt32(reader.ReadString());
 
-                //switch (hp)
-                //{
-                //    case 1:
-                //        break;
-                //    case 2:
-                //        break;
-                //    case 3:
-                //        break;
-                //    case 4:
-                //        break;
-                //    case 5:
-                //        break;
-                //    case 10:
-                //        break;
-                //}
+                switch (hp)
+                {
+                    case 1:
+                        image = Properties.Resources.dirtBlock;
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 10:
+                        break;
+                }
 
                 blocks.Add(new Block(x, y, hp, image));
             }
