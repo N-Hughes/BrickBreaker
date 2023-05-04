@@ -23,6 +23,8 @@ namespace BrickBreaker
         //player1 button control keys - DO NOT CHANGE
         Boolean leftArrowDown, rightArrowDown, spaceDown;
 
+        public static int score;
+
         // Game values
         int lives;
         int level;
@@ -51,12 +53,15 @@ namespace BrickBreaker
 
         public void cam()
         {
-
+            scoreOutput.Text = $"Score: {score}";
         }
 
         public void OnStart()
         {
             NathanielOnStart();
+
+            // Reset score
+            score = 0;
 
             //set life counter
             lives = 2;
@@ -184,6 +189,7 @@ namespace BrickBreaker
                 if (ball.BlockCollision(b))
                 {
                     blocks.Remove(b);
+                    score++;
 
                     if (blocks.Count == 0)
                     {
