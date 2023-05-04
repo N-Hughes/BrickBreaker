@@ -221,7 +221,11 @@ namespace BrickBreaker
             foreach (Block b in blocks)
             {
                 e.Graphics.FillRectangle(blockBrush, b.x, b.y, b.width, b.height);
-                
+
+                if(b.hp == 1)
+                {
+                    e.Graphics.DrawImage(b.image, b.x, b.y, 80, 30);
+                }
             }
 
             // Draws ball
@@ -288,21 +292,22 @@ namespace BrickBreaker
                 reader.ReadToNextSibling("HP");
                 hp = Convert.ToInt32(reader.ReadString());
 
-                //switch (hp)
-                //{
-                //    case 1:
-                //        break;
-                //    case 2:
-                //        break;
-                //    case 3:
-                //        break;
-                //    case 4:
-                //        break;
-                //    case 5:
-                //        break;
-                //    case 10:
-                //        break;
-                //}
+                switch (hp)
+                {
+                    case 1:
+                        image = Properties.Resources.dirtBlock;
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+                        break;
+                    case 5:
+                        break;
+                    case 10:
+                        break;
+                }
 
                 blocks.Add(new Block(x, y, hp, image));
             }
