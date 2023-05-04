@@ -71,11 +71,135 @@ namespace BrickBreaker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;Bricks&gt;&lt;brick&gt;&lt;X&gt;136&lt;/X&gt;&lt;Y&gt;111&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;50&lt;/X&gt;&lt;Y&gt;111&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;222&lt;/X&gt;&lt;Y&gt;39&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;184&lt;/X&gt;&lt;Y&gt;75&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;12&lt;/X&gt;&lt;Y&gt;75&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;98&lt;/X&gt;&lt;Y&gt;75&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;136&lt;/X&gt;&lt;Y&gt;39&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;50&lt;/X&gt;&lt;Y&gt;39&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;184&lt;/X&gt;&lt;Y&gt;3&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;98&lt;/X&gt;&lt;Y&gt;3&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;12&lt;....
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;Bricks&gt;
+        ///  &lt;brick&gt;
+        ///    &lt;X&gt;136&lt;/X&gt;
+        ///    &lt;Y&gt;111&lt;/Y&gt;
+        ///    &lt;HP&gt;1&lt;/HP&gt;
+        ///  &lt;/brick&gt;
+        ///  &lt;brick&gt;
+        ///    &lt;X&gt;50&lt;/X&gt;
+        ///    &lt;Y&gt;111&lt;/Y&gt;
+        ///    &lt;HP&gt;1&lt;/HP&gt;
+        ///  &lt;/brick&gt;
+        ///  &lt;brick&gt;
+        ///    &lt;X&gt;222&lt;/X&gt;
+        ///    &lt;Y&gt;39&lt;/Y&gt;
+        ///    &lt;HP&gt;1&lt;/HP&gt;
+        ///  &lt;/brick&gt;
+        ///  &lt;brick&gt;
+        ///    &lt;X&gt;184&lt;/X&gt;
+        ///    &lt;Y&gt;75&lt;/Y&gt;
+        ///    &lt;HP&gt;1&lt;/HP&gt;
+        ///  &lt;/brick&gt;
+        ///  &lt;brick&gt;
+        ///    &lt;X&gt;12&lt;/X&gt;
+        ///    &lt;Y&gt;75&lt;/Y&gt;
+        ///    &lt;HP&gt;1&lt;/HP&gt;
+        ///  &lt;/brick&gt;
+        ///  &lt;brick&gt;
+        ///    &lt;X&gt;98&lt;/X&gt;
+        ///    &lt;Y&gt;75&lt;/Y&gt;
+        ///    &lt;HP&gt;1&lt;/HP&gt;
+        ///  &lt;/brick&gt;
+        ///  &lt;brick&gt;
+        ///    &lt;X&gt;136&lt;/X&gt;
+        ///    &lt;Y&gt;39&lt;/Y&gt;
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string brickTest {
             get {
                 return ResourceManager.GetString("brickTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dirtBlock {
+            get {
+                object obj = ResourceManager.GetObject("dirtBlock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hello {
+            get {
+                object obj = ResourceManager.GetObject("hello", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;Bricks&gt;&lt;brick&gt;&lt;X&gt;705&lt;/X&gt;&lt;Y&gt;255&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;533&lt;/X&gt;&lt;Y&gt;255&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;619&lt;/X&gt;&lt;Y&gt;219&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;619&lt;/X&gt;&lt;Y&gt;255&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;963&lt;/X&gt;&lt;Y&gt;111&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;275&lt;/X&gt;&lt;Y&gt;111&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;533&lt;/X&gt;&lt;Y&gt;291&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;619&lt;/X&gt;&lt;Y&gt;291&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;705&lt;/X&gt;&lt;Y&gt;291&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;619&lt;/X&gt;&lt;Y&gt;327&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;....
+        /// </summary>
+        internal static string level1 {
+            get {
+                return ResourceManager.GetString("level1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Minecraft {
+            get {
+                object obj = ResourceManager.GetObject("Minecraft", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraftBackground1 {
+            get {
+                object obj = ResourceManager.GetObject("minecraftBackground1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraftHeart {
+            get {
+                object obj = ResourceManager.GetObject("minecraftHeart", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap minecraftScreen {
+            get {
+                object obj = ResourceManager.GetObject("minecraftScreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap newPlainsBackground {
+            get {
+                object obj = ResourceManager.GetObject("newPlainsBackground", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap plainsBackground__1_ {
+            get {
+                object obj = ResourceManager.GetObject("plainsBackground__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
