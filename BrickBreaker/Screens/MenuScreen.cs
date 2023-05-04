@@ -66,13 +66,13 @@ namespace BrickBreaker
 
         private void instructionsButton_Click(object sender, EventArgs e)
         {
-            //TranstionScreen gs = new TranstionScreen();
-            //Form form = this.FindForm();
+            TransitionScreen ts = new TransitionScreen();
+            Form form = this.FindForm();
 
-            //form.Controls.Add(ts);
-            //form.Controls.Remove(this);
+            form.Controls.Add(ts);
+            form.Controls.Remove(this);
 
-            //ts.Location = new Point((form.Width - ts.Width) / 2, (form.Height - ts.Height) / 2);
+            ts.Location = new Point((form.Width - ts.Width) / 2, (form.Height - ts.Height) / 2);
         }
     }
 }
