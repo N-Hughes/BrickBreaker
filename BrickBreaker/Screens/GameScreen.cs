@@ -18,7 +18,8 @@ namespace BrickBreaker
 {
     public partial class GameScreen : UserControl
     {
-        #region global values
+        #region global 
+
 
         //player1 button control keys - DO NOT CHANGE
         Boolean leftArrowDown, rightArrowDown, spaceDown;
@@ -66,6 +67,7 @@ namespace BrickBreaker
 
         public void OnStart()
         {
+            scoreOutput.Font = Form1.myFont;
             NathanielOnStart();
 
             // Reset score
@@ -230,6 +232,9 @@ namespace BrickBreaker
             form.Controls.Add(ps);
             form.Controls.Remove(this);
         }
+         
+
+
 
         public void GameScreen_Paint(object sender, PaintEventArgs e)
         {
