@@ -171,12 +171,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="highscore.xml" />
-    <None Include="Resources\level7.xml" />
-    <None Include="Resources\level6.xml" />
-    <None Include="Resources\level5.xml" />
-    <None Include="Resources\level4.xml" />
-    <None Include="Resources\level3.xml" />
-    <None Include="Resources\level2.xml" />
+    <None Include="Resources\level7.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\level6.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\level5.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\level4.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\level3.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\level2.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\obsidianBlock.jpg" />
     <None Include="Resources\diamondBlock.png" />
     <None Include="Resources\ironBlock.png" />
