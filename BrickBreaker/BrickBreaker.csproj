@@ -171,6 +171,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="highscore.xml" />
+    <None Include="Resources\level7.xml" />
+    <None Include="Resources\level6.xml" />
+    <None Include="Resources\level5.xml" />
+    <None Include="Resources\level4.xml" />
+    <None Include="Resources\level3.xml" />
+    <None Include="Resources\level2.xml" />
+    <None Include="Resources\obsidianBlock.jpg" />
+    <None Include="Resources\diamondBlock.png" />
+    <None Include="Resources\ironBlock.png" />
+    <None Include="Resources\netherrackBlock.png" />
+    <None Include="Resources\stoneBlock.jpg" />
     <None Include="Resources\goodbackground.jpg" />
     <None Include="Resources\dirtBlock.jpg" />
     <None Include="Resources\dirt block.jpg" />
