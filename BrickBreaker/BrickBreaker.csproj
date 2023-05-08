@@ -171,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="highscore.xml" />
+    <None Include="Resources\goodbackground.jpg" />
     <None Include="Resources\dirtBlock.jpg" />
     <None Include="Resources\dirt block.jpg" />
     <None Include="Resources\newPlainsBackground.jpg" />

@@ -50,8 +50,7 @@ namespace BrickBreaker
         // We will have a list of rotating images, Each time we change level we can pull a new image
         List<Image> backgroundImages = new List<Image>();
 
-        //MARIA THIS LINE IS FOR THE PLAINS BACKGROUND
-        //Image plainsBackground = Properties.Resources.goodBackground;
+        Image plainsBackground = Properties.Resources.goodBackground;
 
         #endregion
 
@@ -103,7 +102,6 @@ namespace BrickBreaker
 
             KianOnStart();
 
-            //XMLReader code: we will use this once the first level has been built
             MariaOnStart();
 
             // start the game engine loop
@@ -240,8 +238,7 @@ namespace BrickBreaker
 
         public void GameScreen_Paint(object sender, PaintEventArgs e)
         {
-            // MARIA THIS LINE IS FOR DRAWING THE BACKGROUND
-            // e.Graphics.DrawImageUnscaled(backgroundImages[lives]`, 0, 0);
+            e.Graphics.DrawImageUnscaled(backgroundImages[level - 1], 0, 0);
 
 
             // Draws paddle
@@ -310,7 +307,6 @@ namespace BrickBreaker
             }
         }
 
-
         public void MariaOnStart()
         {
             XmlReader reader = XmlReader.Create($"Resources/level{level}.xml");
@@ -343,6 +339,7 @@ namespace BrickBreaker
                         image = Properties.Resources.dirtBlock;
                         break;
                     case 2:
+
                         break;
                     case 3:
                         break;
@@ -358,6 +355,8 @@ namespace BrickBreaker
             }
 
             reader.Close();
+
+            backgroundImages.Add(plainsBackground);
         }
 
         public void NathanielOnStart()
