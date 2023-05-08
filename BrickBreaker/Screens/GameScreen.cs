@@ -49,7 +49,6 @@ namespace BrickBreaker
         // We will have a list of rotating images, Each time we change level we can pull a new image
         List<Image> backgroundImages = new List<Image>();
 
-        //MARIA THIS LINE IS FOR THE PLAINS BACKGROUND
         Image plainsBackground = Properties.Resources.goodBackground;
 
         #endregion
@@ -234,7 +233,6 @@ namespace BrickBreaker
 
         public void GameScreen_Paint(object sender, PaintEventArgs e)
         {
-            // MARIA THIS LINE IS FOR DRAWING THE BACKGROUND
             e.Graphics.DrawImageUnscaled(backgroundImages[level - 1], 0, 0);
 
 
