@@ -234,6 +234,9 @@ namespace BrickBreaker
             form.Controls.Add(ps);
             form.Controls.Remove(this);
         }
+         
+
+
 
         public void GameScreen_Paint(object sender, PaintEventArgs e)
         {
