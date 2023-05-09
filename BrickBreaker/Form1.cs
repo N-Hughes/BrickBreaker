@@ -9,12 +9,20 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 using System.Drawing.Text;
+using System.Security.Cryptography.X509Certificates;
 
 namespace BrickBreaker
 {
     public partial class Form1 : Form
     {
-        // Creating a custom font? DO NOT EDIT
+
+        public static  int totalScore = 0;
+
+        public static int size = 16;
+
+
+        // Creating a custom font (16p)
+        #region
         [System.Runtime.InteropServices.DllImport("gdi32.dll")]
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont,
             IntPtr pdv, [System.Runtime.InteropServices.In] ref uint pcFonts);
@@ -22,21 +30,18 @@ namespace BrickBreaker
         private PrivateFontCollection fonts = new PrivateFontCollection();
         // Accessing the minecraft font on all forms
         public static Font myFont;
+        #endregion
+
 
         public Form1()
         {
             InitializeComponent();
+            // adding the custom font (16p)
+            #region 
 
-            // adding the custom font? DO NOT EDIT
-            byte[] fontData = Properties.Resources.Minecraft;
-            IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
-            System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
-            uint dummy = 0;
-            fonts.AddMemoryFont(fontPtr, Properties.Resources.Minecraft.Length);
-            AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.Minecraft.Length, IntPtr.Zero, ref dummy);
-            System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
+            FontChange();
+            #endregion
 
-            myFont = new Font(fonts.Families[0], 16.0F);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -48,5 +53,23 @@ namespace BrickBreaker
 
             ms.Location = new Point((this.Width - ms.Width) / 2, (this.Height - ms.Height) / 2);
         }
+
+
+        public void FontChange()
+        {
+            byte[] fontData = Properties.Resources.Minecraft;
+            IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);
+            System.Runtime.InteropServices.Marshal.Copy(fontData, 0, fontPtr, fontData.Length);
+            uint dummy = 0;
+            fonts.AddMemoryFont(fontPtr, Properties.Resources.Minecraft.Length);
+            AddFontMemResourceEx(fontPtr, (uint)Properties.Resources.Minecraft.Length, IntPtr.Zero, ref dummy);
+            System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
+
+            myFont = new Font(fonts.Families[0], size);
+        }
+
+
+
+
     }
 }
