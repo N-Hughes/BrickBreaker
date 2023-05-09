@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.subtitleLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.highscore = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -136,12 +137,23 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
+            // highscore
+            // 
+            this.highscore.Location = new System.Drawing.Point(648, 270);
+            this.highscore.Name = "highscore";
+            this.highscore.Size = new System.Drawing.Size(118, 43);
+            this.highscore.TabIndex = 8;
+            this.highscore.Text = "Stats";
+            this.highscore.UseVisualStyleBackColor = true;
+            this.highscore.Click += new System.EventHandler(this.highscore_Click);
+            // 
             // MenuScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = global::BrickBreaker.Properties.Resources.minecraftScreen;
+            this.Controls.Add(this.highscore);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.subtitleLabel);
             this.Controls.Add(this.label1);
@@ -169,5 +181,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label subtitleLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button highscore;
     }
 }
