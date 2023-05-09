@@ -21,9 +21,11 @@ namespace BrickBreaker
             subtitleLabel.Font = Form1.myFont;
             scoreLabel.Font = Form1.myFont;
             scoreValue.Font = Form1.myFont;
-            //Form1.size = 72;
+
+
+            Form1.size = 72;
         
-            //  Form1.FontChange(size);
+            Form1.FontChange();
 
             titleLabel.Font = Form1.myFont;
 

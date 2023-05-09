@@ -38,11 +38,12 @@
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(621, 328);
+            this.titleLabel.Location = new System.Drawing.Point(451, 155);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(104, 25);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "You died!";
+            this.titleLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // subtitleLabel
             // 
