@@ -128,19 +128,19 @@ namespace BrickBreaker
             switch (num)
             {
                 case 0:
-                    xSpeed = startXSpeed - 3;
+                    xSpeed = startXSpeed - 2;
                     break;
                 case 1:
-                    xSpeed = startXSpeed - 2;
+                    xSpeed = startXSpeed - 1;
                     break;
                 case 2:
                     xSpeed = startXSpeed;
                     break;
                 case 3:
-                    xSpeed= startXSpeed + 2;
+                    xSpeed= startXSpeed + 1;
                     break;
                 case 4:
-                    xSpeed = startXSpeed + 3;
+                    xSpeed = startXSpeed + 2;
                     break; 
             }
         }

@@ -231,7 +231,7 @@ namespace BrickBreaker
             {
                 e.Graphics.FillRectangle(blockBrush, b.x, b.y, b.width, b.height);
 
-                if(b.hp == 1)
+                if (b.hp == 1)
                 {
                     e.Graphics.DrawImage(b.image, b.x, b.y, 80, 30);
                 }
