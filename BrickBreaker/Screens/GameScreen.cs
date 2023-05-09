@@ -20,7 +20,6 @@ namespace BrickBreaker
     {
         #region global 
 
-
         //player1 button control keys - DO NOT CHANGE
         Boolean leftArrowDown, rightArrowDown, spaceDown;
 
@@ -37,7 +36,6 @@ namespace BrickBreaker
         // list of all blocks for current level
         List<Block> blocks = new List<Block>();
         List<Powerup> powerups = new List<Powerup>();
-
 
         // Brushes
         SolidBrush paddleBrush = new SolidBrush(Color.White);
@@ -198,7 +196,6 @@ namespace BrickBreaker
             {
                 if (ball.BlockCollision(b))
                 {
-
                     Noah(b);
 
                     blocks.Remove(b);
@@ -245,11 +242,9 @@ namespace BrickBreaker
             form.Controls.Remove(this);
         }
 
-
         public void GameScreen_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawImageUnscaled(backgroundImages[level - 1], 0, 0);
-
 
             // Draws paddle
             paddleBrush.Color = paddle.colour;
@@ -260,7 +255,7 @@ namespace BrickBreaker
             {
                 e.Graphics.FillRectangle(blockBrush, b.x, b.y, b.width, b.height);
 
-                if(b.hp == 1)
+                if (b.image != null)
                 {
                     e.Graphics.DrawImage(b.image, b.x, b.y, 80, 30);
                 }
@@ -349,15 +344,19 @@ namespace BrickBreaker
                         image = Properties.Resources.dirtBlock;
                         break;
                     case 2:
-
+                        image = Properties.Resources.stoneBlock;
                         break;
                     case 3:
+                        image = Properties.Resources.netherrackBlock;
                         break;
                     case 4:
+                        image = Properties.Resources.ironBlock;
                         break;
                     case 5:
+                        image = Properties.Resources.diamondBlock;
                         break;
                     case 10:
+                        image = Properties.Resources.obsidianBlock;
                         break;
                 }
 

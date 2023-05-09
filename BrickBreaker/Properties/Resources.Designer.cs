@@ -117,6 +117,16 @@ namespace BrickBreaker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap diamondBlock {
+            get {
+                object obj = ResourceManager.GetObject("diamondBlock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dirtBlock {
             get {
                 object obj = ResourceManager.GetObject("dirtBlock", resourceCulture);
@@ -145,11 +155,75 @@ namespace BrickBreaker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ironBlock {
+            get {
+                object obj = ResourceManager.GetObject("ironBlock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;Bricks&gt;&lt;brick&gt;&lt;X&gt;705&lt;/X&gt;&lt;Y&gt;255&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;533&lt;/X&gt;&lt;Y&gt;255&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;619&lt;/X&gt;&lt;Y&gt;219&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;619&lt;/X&gt;&lt;Y&gt;255&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;963&lt;/X&gt;&lt;Y&gt;111&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;275&lt;/X&gt;&lt;Y&gt;111&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;533&lt;/X&gt;&lt;Y&gt;291&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;619&lt;/X&gt;&lt;Y&gt;291&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;705&lt;/X&gt;&lt;Y&gt;291&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;619&lt;/X&gt;&lt;Y&gt;327&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;....
         /// </summary>
         internal static string level1 {
             get {
                 return ResourceManager.GetString("level1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;Bricks&gt;&lt;brick&gt;&lt;X&gt;1288&lt;/X&gt;&lt;Y&gt;147&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;1288&lt;/X&gt;&lt;Y&gt;111&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;361&lt;/X&gt;&lt;Y&gt;291&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;963&lt;/X&gt;&lt;Y&gt;291&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;361&lt;/X&gt;&lt;Y&gt;255&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;963&lt;/X&gt;&lt;Y&gt;255&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;705&lt;/X&gt;&lt;Y&gt;399&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;705&lt;/X&gt;&lt;Y&gt;363&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;791&lt;/X&gt;&lt;Y&gt;255&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;791&lt;/X&gt;&lt;Y&gt;219&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&g....
+        /// </summary>
+        internal static string level2 {
+            get {
+                return ResourceManager.GetString("level2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;Bricks&gt;&lt;brick&gt;&lt;X&gt;877&lt;/X&gt;&lt;Y&gt;111&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;447&lt;/X&gt;&lt;Y&gt;111&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;1288&lt;/X&gt;&lt;Y&gt;147&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;1288&lt;/X&gt;&lt;Y&gt;111&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;447&lt;/X&gt;&lt;Y&gt;255&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;619&lt;/X&gt;&lt;Y&gt;219&lt;/Y&gt;&lt;HP&gt;1&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;705&lt;/X&gt;&lt;Y&gt;183&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;533&lt;/X&gt;&lt;Y&gt;291&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;791&lt;/X&gt;&lt;Y&gt;219&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;791&lt;/X&gt;&lt;Y&gt;147&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&g....
+        /// </summary>
+        internal static string level3 {
+            get {
+                return ResourceManager.GetString("level3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;Bricks&gt;&lt;brick&gt;&lt;X&gt;403&lt;/X&gt;&lt;Y&gt;111&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;919&lt;/X&gt;&lt;Y&gt;111&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;403&lt;/X&gt;&lt;Y&gt;291&lt;/Y&gt;&lt;HP&gt;4&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;919&lt;/X&gt;&lt;Y&gt;291&lt;/Y&gt;&lt;HP&gt;4&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;661&lt;/X&gt;&lt;Y&gt;255&lt;/Y&gt;&lt;HP&gt;4&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;489&lt;/X&gt;&lt;Y&gt;255&lt;/Y&gt;&lt;HP&gt;4&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;833&lt;/X&gt;&lt;Y&gt;255&lt;/Y&gt;&lt;HP&gt;4&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;575&lt;/X&gt;&lt;Y&gt;111&lt;/Y&gt;&lt;HP&gt;4&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;661&lt;/X&gt;&lt;Y&gt;147&lt;/Y&gt;&lt;HP&gt;4&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;489&lt;/X&gt;&lt;Y&gt;147&lt;/Y&gt;&lt;HP&gt;4&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;....
+        /// </summary>
+        internal static string level4 {
+            get {
+                return ResourceManager.GetString("level4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;Bricks&gt;&lt;brick&gt;&lt;X&gt;357&lt;/X&gt;&lt;Y&gt;579&lt;/Y&gt;&lt;HP&gt;4&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;357&lt;/X&gt;&lt;Y&gt;435&lt;/Y&gt;&lt;HP&gt;4&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;959&lt;/X&gt;&lt;Y&gt;579&lt;/Y&gt;&lt;HP&gt;4&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;959&lt;/X&gt;&lt;Y&gt;435&lt;/Y&gt;&lt;HP&gt;4&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;152&lt;/X&gt;&lt;Y&gt;471&lt;/Y&gt;&lt;HP&gt;4&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;1168&lt;/X&gt;&lt;Y&gt;471&lt;/Y&gt;&lt;HP&gt;4&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;152&lt;/X&gt;&lt;Y&gt;507&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;1168&lt;/X&gt;&lt;Y&gt;507&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;357&lt;/X&gt;&lt;Y&gt;615&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;959&lt;/X&gt;&lt;Y&gt;615&lt;/Y&gt;&lt;HP&gt;2&lt;/HP&gt;&lt;/brick&gt;&lt;brick&g....
+        /// </summary>
+        internal static string level5 {
+            get {
+                return ResourceManager.GetString("level5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;Bricks&gt;&lt;brick&gt;&lt;X&gt;55&lt;/X&gt;&lt;Y&gt;419&lt;/Y&gt;&lt;HP&gt;3&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;55&lt;/X&gt;&lt;Y&gt;455&lt;/Y&gt;&lt;HP&gt;3&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;1256&lt;/X&gt;&lt;Y&gt;419&lt;/Y&gt;&lt;HP&gt;3&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;1256&lt;/X&gt;&lt;Y&gt;455&lt;/Y&gt;&lt;HP&gt;3&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;657&lt;/X&gt;&lt;Y&gt;455&lt;/Y&gt;&lt;HP&gt;5&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;571&lt;/X&gt;&lt;Y&gt;491&lt;/Y&gt;&lt;HP&gt;3&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;657&lt;/X&gt;&lt;Y&gt;491&lt;/Y&gt;&lt;HP&gt;3&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;743&lt;/X&gt;&lt;Y&gt;491&lt;/Y&gt;&lt;HP&gt;3&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;1084&lt;/X&gt;&lt;Y&gt;491&lt;/Y&gt;&lt;HP&gt;3&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;227&lt;/X&gt;&lt;Y&gt;491&lt;/Y&gt;&lt;HP&gt;3&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt....
+        /// </summary>
+        internal static string level6 {
+            get {
+                return ResourceManager.GetString("level6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&lt;Bricks&gt;&lt;brick&gt;&lt;X&gt;977&lt;/X&gt;&lt;Y&gt;459&lt;/Y&gt;&lt;HP&gt;3&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;805&lt;/X&gt;&lt;Y&gt;459&lt;/Y&gt;&lt;HP&gt;3&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;284&lt;/X&gt;&lt;Y&gt;459&lt;/Y&gt;&lt;HP&gt;3&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;370&lt;/X&gt;&lt;Y&gt;459&lt;/Y&gt;&lt;HP&gt;3&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;456&lt;/X&gt;&lt;Y&gt;459&lt;/Y&gt;&lt;HP&gt;3&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;891&lt;/X&gt;&lt;Y&gt;459&lt;/Y&gt;&lt;HP&gt;3&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;412&lt;/X&gt;&lt;Y&gt;423&lt;/Y&gt;&lt;HP&gt;5&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;326&lt;/X&gt;&lt;Y&gt;423&lt;/Y&gt;&lt;HP&gt;5&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;370&lt;/X&gt;&lt;Y&gt;387&lt;/Y&gt;&lt;HP&gt;5&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;&lt;X&gt;891&lt;/X&gt;&lt;Y&gt;387&lt;/Y&gt;&lt;HP&gt;5&lt;/HP&gt;&lt;/brick&gt;&lt;brick&gt;....
+        /// </summary>
+        internal static string level7 {
+            get {
+                return ResourceManager.GetString("level7", resourceCulture);
             }
         }
         
@@ -196,6 +270,16 @@ namespace BrickBreaker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap netherrackBlock {
+            get {
+                object obj = ResourceManager.GetObject("netherrackBlock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap newPlainsBackground {
             get {
                 object obj = ResourceManager.GetObject("newPlainsBackground", resourceCulture);
@@ -206,9 +290,29 @@ namespace BrickBreaker.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap obsidianBlock {
+            get {
+                object obj = ResourceManager.GetObject("obsidianBlock", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap plainsBackground__1_ {
             get {
                 object obj = ResourceManager.GetObject("plainsBackground__1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stoneBlock {
+            get {
+                object obj = ResourceManager.GetObject("stoneBlock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
