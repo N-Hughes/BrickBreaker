@@ -184,7 +184,7 @@ namespace BrickBreaker
                 if (lives == -1)
                 {
                     gameTimer.Enabled = false;
-                    OnEnd();
+                    NathanielGameOver();
                 }
             }
 
@@ -221,14 +221,27 @@ namespace BrickBreaker
         {
             // Goes to the game over screen
             Form form = this.FindForm();
-            MenuScreen ps = new MenuScreen();
+            TransitionScreen ps = new TransitionScreen();
 
             ps.Location = new Point((form.Width - ps.Width) / 2, (form.Height - ps.Height) / 2);
 
             form.Controls.Add(ps);
             form.Controls.Remove(this);
         }
-        
+         
+        public void NathanielGameOver()
+        {
+            Form1.totalScore = score;
+
+            Form form = this.FindForm();
+            GameOverScreen ps = new GameOverScreen();
+
+            ps.Location = new Point((form.Width - ps.Width) / 2, (form.Height - ps.Height) / 2);
+
+            form.Controls.Add(ps);
+            form.Controls.Remove(this);
+        }
+
         public void GameScreen_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawImageUnscaled(backgroundImages[level - 1], 0, 0);
