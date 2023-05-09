@@ -33,6 +33,7 @@
             this.livesBox1 = new System.Windows.Forms.PictureBox();
             this.livesBox2 = new System.Windows.Forms.PictureBox();
             this.livesBox3 = new System.Windows.Forms.PictureBox();
+            this.scoreOutput = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.livesBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.livesBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.livesBox3)).BeginInit();
@@ -74,11 +75,22 @@
             this.livesBox3.TabIndex = 2;
             this.livesBox3.TabStop = false;
             // 
+            // scoreOutput
+            // 
+            this.scoreOutput.BackColor = System.Drawing.Color.Transparent;
+            this.scoreOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreOutput.ForeColor = System.Drawing.Color.Red;
+            this.scoreOutput.Location = new System.Drawing.Point(1256, 748);
+            this.scoreOutput.Name = "scoreOutput";
+            this.scoreOutput.Size = new System.Drawing.Size(130, 40);
+            this.scoreOutput.TabIndex = 3;
+            // 
             // GameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.Controls.Add(this.scoreOutput);
             this.Controls.Add(this.livesBox3);
             this.Controls.Add(this.livesBox2);
             this.Controls.Add(this.livesBox1);
@@ -101,5 +113,6 @@
         private System.Windows.Forms.PictureBox livesBox1;
         private System.Windows.Forms.PictureBox livesBox2;
         private System.Windows.Forms.PictureBox livesBox3;
+        private System.Windows.Forms.Label scoreOutput;
     }
 }

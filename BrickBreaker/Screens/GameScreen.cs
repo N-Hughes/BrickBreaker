@@ -18,10 +18,12 @@ namespace BrickBreaker
 {
     public partial class GameScreen : UserControl
     {
-        #region global values
+        #region global 
 
         //player1 button control keys - DO NOT CHANGE
         Boolean leftArrowDown, rightArrowDown, spaceDown;
+
+        public static int score;
 
         // Game values
         int lives;
@@ -35,13 +37,18 @@ namespace BrickBreaker
         List<Block> blocks = new List<Block>();
         List<Powerup> powerups = new List<Powerup>();
 
-
         // Brushes
         SolidBrush paddleBrush = new SolidBrush(Color.White);
         SolidBrush ballBrush = new SolidBrush(Color.White);
         SolidBrush blockBrush = new SolidBrush(Color.Red);
 
         List<PictureBox> livesList = new List<PictureBox>();
+
+
+        // We will have a list of rotating images, Each time we change level we can pull a new image
+        List<Image> backgroundImages = new List<Image>();
+
+        Image plainsBackground = Properties.Resources.goodBackground;
 
         #endregion
 
@@ -53,12 +60,16 @@ namespace BrickBreaker
 
         public void cam()
         {
-
+            scoreOutput.Text = $"Score: {score}";
         }
 
         public void OnStart()
         {
+            scoreOutput.Font = Form1.myFont;
             NathanielOnStart();
+
+            // Reset score
+            score = 0;
 
             //set life counter
             lives = 2;
@@ -89,7 +100,6 @@ namespace BrickBreaker
 
             KianOnStart();
 
-            //XMLReader code: we will use this once the first level has been built
             MariaOnStart();
 
             // start the game engine loop
@@ -174,7 +184,7 @@ namespace BrickBreaker
                 if (lives == -1)
                 {
                     gameTimer.Enabled = false;
-                    OnEnd();
+                    NathanielGameOver();
                 }
             }
 
@@ -186,10 +196,10 @@ namespace BrickBreaker
             {
                 if (ball.BlockCollision(b))
                 {
-
                     Noah(b);
 
                     blocks.Remove(b);
+                    score++;
 
                     if (blocks.Count == 0)
                     {
@@ -201,7 +211,6 @@ namespace BrickBreaker
                 }
             }
 
-
             NoahEngine();
 
             //redraw the screen
@@ -212,7 +221,20 @@ namespace BrickBreaker
         {
             // Goes to the game over screen
             Form form = this.FindForm();
-            MenuScreen ps = new MenuScreen();
+            TransitionScreen ps = new TransitionScreen();
+
+            ps.Location = new Point((form.Width - ps.Width) / 2, (form.Height - ps.Height) / 2);
+
+            form.Controls.Add(ps);
+            form.Controls.Remove(this);
+        }
+         
+        public void NathanielGameOver()
+        {
+            Form1.totalScore = score;
+
+            Form form = this.FindForm();
+            GameOverScreen ps = new GameOverScreen();
 
             ps.Location = new Point((form.Width - ps.Width) / 2, (form.Height - ps.Height) / 2);
 
@@ -222,6 +244,8 @@ namespace BrickBreaker
 
         public void GameScreen_Paint(object sender, PaintEventArgs e)
         {
+            e.Graphics.DrawImageUnscaled(backgroundImages[level - 1], 0, 0);
+
             // Draws paddle
             paddleBrush.Color = paddle.colour;
             e.Graphics.FillRectangle(paddleBrush, paddle.x, paddle.y, paddle.width, paddle.height);
@@ -231,7 +255,7 @@ namespace BrickBreaker
             {
                 e.Graphics.FillRectangle(blockBrush, b.x, b.y, b.width, b.height);
 
-                if (b.hp == 1)
+                if (b.image != null)
                 {
                     e.Graphics.DrawImage(b.image, b.x, b.y, 80, 30);
                 }
@@ -288,7 +312,6 @@ namespace BrickBreaker
             }
         }
 
-
         public void MariaOnStart()
         {
             XmlReader reader = XmlReader.Create($"Resources/level{level}.xml");
@@ -321,14 +344,19 @@ namespace BrickBreaker
                         image = Properties.Resources.dirtBlock;
                         break;
                     case 2:
+                        image = Properties.Resources.stoneBlock;
                         break;
                     case 3:
+                        image = Properties.Resources.netherrackBlock;
                         break;
                     case 4:
+                        image = Properties.Resources.ironBlock;
                         break;
                     case 5:
+                        image = Properties.Resources.diamondBlock;
                         break;
                     case 10:
+                        image = Properties.Resources.obsidianBlock;
                         break;
                 }
 
@@ -336,6 +364,8 @@ namespace BrickBreaker
             }
 
             reader.Close();
+
+            backgroundImages.Add(plainsBackground);
         }
 
         public void NathanielOnStart()
