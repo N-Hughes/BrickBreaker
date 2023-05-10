@@ -27,7 +27,7 @@ namespace BrickBreaker
 
         // Game values
         int lives;
-        int level;
+       // public static int level;
 
         // Paddle and Ball objects
         Paddle paddle;
@@ -50,11 +50,15 @@ namespace BrickBreaker
 
         Image plainsBackground = Properties.Resources.goodBackground;
 
+
+
         #endregion
 
         public GameScreen()
         {
             InitializeComponent();
+            Form1.size = 16;
+            Form1.FontChange();
             OnStart();
         }
 
@@ -75,7 +79,7 @@ namespace BrickBreaker
             lives = 2;
 
             //set level tracker
-            level = 1;
+            //level = 1;
 
             //set all button presses to false.
             leftArrowDown = rightArrowDown = false;
@@ -219,6 +223,7 @@ namespace BrickBreaker
 
         public void OnEnd()
         {
+            Form1.level++;
             // Goes to the game over screen
             Form form = this.FindForm();
             TransitionScreen ps = new TransitionScreen();
@@ -244,7 +249,7 @@ namespace BrickBreaker
 
         public void GameScreen_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.DrawImageUnscaled(backgroundImages[level - 1], 0, 0);
+            e.Graphics.DrawImageUnscaled(backgroundImages[Form1.level - 1], 0, 0);
 
             // Draws paddle
             paddleBrush.Color = paddle.colour;
@@ -314,7 +319,7 @@ namespace BrickBreaker
 
         public void MariaOnStart()
         {
-            XmlReader reader = XmlReader.Create($"Resources/level{level}.xml");
+            XmlReader reader = XmlReader.Create($"Resources/level{Form1.level}.xml");
 
             while (reader.Read())
             {

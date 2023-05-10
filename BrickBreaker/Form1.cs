@@ -19,6 +19,8 @@ namespace BrickBreaker
         public static  int totalScore = 0;
 
         public static float size = 16;
+       
+        public static int level = 1;
 
 
         // Creating a custom font (16p)
