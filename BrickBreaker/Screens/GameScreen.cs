@@ -26,24 +26,27 @@ namespace BrickBreaker
         public static int score;
 
         // Game values
-        int lives;
+       public static int lives;
         int level;
 
         // Paddle and Ball objects
         Paddle paddle;
-        Ball ball;
+        public static Ball ball;
+        public static int luckChance;
+
 
         // list of all blocks for current level
-        List<Block> blocks = new List<Block>();
+        public static List<Block> blocks = new List<Block>();
         List<Powerup> powerups = new List<Powerup>();
 
         // Brushes
         SolidBrush paddleBrush = new SolidBrush(Color.White);
         SolidBrush ballBrush = new SolidBrush(Color.White);
         SolidBrush blockBrush = new SolidBrush(Color.Red);
+        public static SolidBrush invisBrush = new SolidBrush(Color.Transparent);
 
         List<PictureBox> livesList = new List<PictureBox>();
-
+        public static List<Color> colours = new List<Color> {Color.Green, Color.Blue, Color.Red, Color.Orange, Color.Purple, Color.Yellow, Color.Pink, Color.Cyan};
 
         // We will have a list of rotating images, Each time we change level we can pull a new image
         List<Image> backgroundImages = new List<Image>();
@@ -267,7 +270,7 @@ namespace BrickBreaker
             // Draws PowerUps
             foreach (Powerup p in powerups)
             {
-                e.Graphics.FillRectangle(ballBrush, p.x, p.y, 12, 25);
+                e.Graphics.FillRectangle(p.powerUpBrush, p.x, p.y, 12, 25);
             }
         }
 
@@ -296,11 +299,13 @@ namespace BrickBreaker
         {
             Random randGen = new Random();
             int chance = randGen.Next(1, 6);
-            if (true)
+            if (chance <= 1 + luckChance)
             {
-                Powerup newPowerup = new Powerup(b.x, b.y);
+                chance = randGen.Next(1, colours.Count);
+                Powerup newPowerup = new Powerup(b.x, b.y, chance);
                 powerups.Add(newPowerup);
             }
+           
         }
 
         public void NoahEngine()
