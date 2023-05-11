@@ -145,7 +145,7 @@
             this.highscore.TabIndex = 8;
             this.highscore.Text = "Stats";
             this.highscore.UseVisualStyleBackColor = true;
-            this.highscore.Click += new System.EventHandler(this.highscore_Click);
+         
             // 
             // MenuScreen
             // 

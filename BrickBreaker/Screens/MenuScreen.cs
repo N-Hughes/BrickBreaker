@@ -89,13 +89,6 @@ namespace BrickBreaker
 
         }
 
-        private void highscore_Click(object sender, EventArgs e)
-        {
-            Form f = this.FindForm();
-            f.Controls.Remove(this);
-            HighScoreScreen hs = new HighScoreScreen ();
-            f.Controls.Add((hs));
-          
-        }
+      
     }
 }
