@@ -33,6 +33,7 @@ namespace BrickBreaker
         Paddle paddle;
         public static Ball ball;
         public static int luckChance;
+        public static int prevYSpeed;
 
 
         // list of all blocks for current level
@@ -46,7 +47,7 @@ namespace BrickBreaker
         public static SolidBrush invisBrush = new SolidBrush(Color.Transparent);
 
         List<PictureBox> livesList = new List<PictureBox>();
-        public static List<Color> colours = new List<Color> {Color.Green, Color.Blue, Color.Red, Color.Orange, Color.Purple, Color.Yellow, Color.Pink, Color.Cyan};
+        public static List<Color> colours = new List<Color> {Color.Green, Color.Blue, Color.Red, Color.Orange, Color.Purple, Color.Yellow, Color.Pink, Color.Cyan, Color.Maroon, Color.Lavender, Color.Gray};
 
         // We will have a list of rotating images, Each time we change level we can pull a new image
         List<Image> backgroundImages = new List<Image>();
@@ -98,6 +99,7 @@ namespace BrickBreaker
             // Creates a new ball
             int xSpeed = 6;
             int ySpeed = 6;
+            prevYSpeed = ySpeed;
             int ballSize = 20;
             ball = new Ball(ballX, ballY, xSpeed, ySpeed, ballSize);
 

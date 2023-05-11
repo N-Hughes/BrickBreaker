@@ -69,7 +69,7 @@ namespace BrickBreaker
             {
                 if (type > 0 && type < 99) //good powerups
                 {
-                    if (type == 1) //tnt
+                    if (type == 1) //tnt green
                     {
                         Rectangle tntRec = new Rectangle(GameScreen.ball.x, GameScreen.ball.y, GameScreen.ball.size, GameScreen.ball.size);
                         
@@ -85,48 +85,48 @@ namespace BrickBreaker
                         }
                         
                     }
-                    else if (type == 2) //luck/more powerups
+                    else if (type == 2) //luck/more powerups blue
                     {
                         GameScreen.luckChance = 2;
                         await Task.Delay(10000);
                         GameScreen.luckChance = 0;
                     }
-                    else if (type == 3) //strength/double damage
+                    else if (type == 3) //strength/double damage red
                     {
 
                     }
-                    else if (type == 4) //health potion/ +1 heart
+                    else if (type == 4) //health potion/ +1 heart orange
                     {
                         GameScreen.lives++;
                     }
-                    else if (type == 5) //Slowfall for ball
+                    else if (type == 5) //Slowfall for ball purple
                     {
-
+                        //GameScreen.ball.ySpeed = prevYSpeed;
                     }
-                    else if (type == 6) //totem of undying (might be hard)
+                    else if (type == 6) //totem of undying (might be hard) yellow
                     {
 
                     }
 
                     if (type < 0 || type == 99)
                     {
-                        if(type == -1) //speed/fast ball
+                        if(type == -1) //speed/fast ball pink
                         {
 
                         }
-                        else if(type == -2)//slowness/slow paddle
+                        else if(type == -2)//slowness/slow paddle cyan
                         {
 
                         }
-                        else if(type == -3) //harming potion
+                        else if(type == -3) //harming potion marroon
                         {
 
                         }
-                        else if(type == -4) //invisibility ball
+                        else if(type == -4) //invisibility ball lavender
                         {
                             
                         }
-                        else if(type == -5) //mining fatigue/no damage
+                        else if(type == -5) //mining fatigue/no damage gray
                         {
 
                         }
