@@ -7,12 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace BrickBreaker
 {
     public partial class MenuScreen : UserControl
     {
         List<string> messageList = new List<string>();
+
+        public static List<HighScore> highScores = new List<HighScore>();
+        
 
         public MenuScreen()
 
@@ -30,7 +34,30 @@ namespace BrickBreaker
             highscoreButton.Font = Form1.myFont;
             subtitleLabel.Font = Form1.myFont;
         }
+        public void Cam()
+        {
+            string name, score;
+            XmlReader reader = XmlReader.Create("HighScoreXML.xml");
+            while (reader.Read())
+            {
+                if (reader.NodeType == XmlNodeType.Text)
+                {
+                    name = reader.ReadString();
 
+                    reader.ReadToNextSibling("Score");
+
+                    score = reader.ReadString();
+
+                    int newScore = Convert.ToInt32(score);
+
+                   HighScore h= new HighScore(name, newScore);
+
+                   highScores.Add(h);
+                }
+            }
+
+
+        }
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();

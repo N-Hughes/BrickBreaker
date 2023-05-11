@@ -220,10 +220,36 @@ namespace BrickBreaker
             //redraw the screen
             Refresh();
         }
+        public void SetScore()
+        {
 
+            string highScore = score.ToString();
+            int intScore = Convert.ToInt32(highScore);
+
+            HighScore newScore = new HighScore("Player", intScore);
+            MenuScreen.highScores.Add(newScore);
+
+            XmlWriter writer = XmlWriter.Create("HighScoreXML.xml", null);
+            writer.WriteStartElement("HighScore");
+
+            foreach(HighScore s in MenuScreen.highScores)
+            {
+                writer.WriteElementString("Name", s.name);
+                writer.WriteElementString("Score", s.score.ToString());
+            }
+            writer.WriteEndElement();
+            writer.Close(); 
+
+
+
+        }
         public void OnEnd()
         {
+
+            SetScore();
+            
             Form1.level++;
+            
             // Goes to the game over screen
             Form form = this.FindForm();
             TransitionScreen ps = new TransitionScreen();
@@ -259,7 +285,7 @@ namespace BrickBreaker
             foreach (Block b in blocks)
             {
                 e.Graphics.FillRectangle(blockBrush, b.x, b.y, b.width, b.height);
-
+                
                 if (b.image != null)
                 {
                     e.Graphics.DrawImage(b.image, b.x, b.y, 80, 30);
@@ -294,9 +320,9 @@ namespace BrickBreaker
             {
                 ball.canMove = true;
             }
-            
+
         }
-        
+
         public void Noah(Block b)
         {
             Random randGen = new Random();
@@ -379,7 +405,7 @@ namespace BrickBreaker
             livesList.Add(livesBox2);
             livesList.Add(livesBox3);
 
-            foreach(PictureBox l in livesList)
+            foreach (PictureBox l in livesList)
             {
                 l.Image = Properties.Resources.minecraftHeart;
             }
