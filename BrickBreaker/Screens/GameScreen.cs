@@ -247,7 +247,7 @@ namespace BrickBreaker
                 writer.WriteElementString("Score", s.score.ToString());
             }
             writer.WriteEndElement();
-            writer.Close(); 
+            writer.Close();
         }
         public void OnEnd()
         {
