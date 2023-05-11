@@ -78,10 +78,11 @@
             // scoreOutput
             // 
             this.scoreOutput.BackColor = System.Drawing.Color.Transparent;
-            this.scoreOutput.ForeColor = System.Drawing.Color.Tomato;
-            this.scoreOutput.Location = new System.Drawing.Point(1253, 0);
+            this.scoreOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.scoreOutput.ForeColor = System.Drawing.Color.White;
+            this.scoreOutput.Location = new System.Drawing.Point(1256, 748);
             this.scoreOutput.Name = "scoreOutput";
-            this.scoreOutput.Size = new System.Drawing.Size(130, 52);
+            this.scoreOutput.Size = new System.Drawing.Size(130, 40);
             this.scoreOutput.TabIndex = 3;
             // 
             // GameScreen

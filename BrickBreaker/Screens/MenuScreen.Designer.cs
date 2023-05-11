@@ -37,7 +37,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.subtitleLabel = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.highscore = new System.Windows.Forms.Button();
+            this.instructionsButton = new System.Windows.Forms.Button();
+            this.highscoreButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -98,7 +99,7 @@
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.exitButton.Location = new System.Drawing.Point(424, 479);
+            this.exitButton.Location = new System.Drawing.Point(424, 550);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(591, 57);
             this.exitButton.TabIndex = 1;
@@ -137,15 +138,34 @@
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
-            // highscore
+            // instructionsButton
             // 
-            this.highscore.Location = new System.Drawing.Point(648, 270);
-            this.highscore.Name = "highscore";
-            this.highscore.Size = new System.Drawing.Size(118, 43);
-            this.highscore.TabIndex = 8;
-            this.highscore.Text = "Stats";
-            this.highscore.UseVisualStyleBackColor = true;
-         
+            this.instructionsButton.BackColor = System.Drawing.Color.DimGray;
+            this.instructionsButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.instructionsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.instructionsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.instructionsButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.instructionsButton.Location = new System.Drawing.Point(424, 476);
+            this.instructionsButton.Name = "instructionsButton";
+            this.instructionsButton.Size = new System.Drawing.Size(293, 57);
+            this.instructionsButton.TabIndex = 8;
+            this.instructionsButton.Text = "Instructions";
+            this.instructionsButton.UseVisualStyleBackColor = false;
+            this.instructionsButton.Click += new System.EventHandler(this.instructionsButton_Click);
+            // 
+            // highscoreButton
+            // 
+            this.highscoreButton.BackColor = System.Drawing.Color.DimGray;
+            this.highscoreButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.highscoreButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.highscoreButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.highscoreButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.highscoreButton.Location = new System.Drawing.Point(723, 476);
+            this.highscoreButton.Name = "highscoreButton";
+            this.highscoreButton.Size = new System.Drawing.Size(293, 57);
+            this.highscoreButton.TabIndex = 9;
+            this.highscoreButton.Text = "Highscores";
+            this.highscoreButton.UseVisualStyleBackColor = false;
             // 
             // MenuScreen
             // 
@@ -153,7 +173,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BackgroundImage = global::BrickBreaker.Properties.Resources.minecraftScreen;
-            this.Controls.Add(this.highscore);
+            this.Controls.Add(this.highscoreButton);
+            this.Controls.Add(this.instructionsButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.subtitleLabel);
             this.Controls.Add(this.label1);
@@ -181,6 +202,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label subtitleLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button highscore;
+        private System.Windows.Forms.Button instructionsButton;
+        private System.Windows.Forms.Button highscoreButton;
     }
 }
