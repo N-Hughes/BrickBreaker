@@ -78,6 +78,7 @@
     <Compile Include="GameOverScreen.Designer.cs">
       <DependentUpon>GameOverScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="HighScore.cs" />
     <Compile Include="Paddle.cs" />
     <Compile Include="Powerup.cs" />
     <Compile Include="Program.cs" />

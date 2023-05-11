@@ -27,7 +27,6 @@ namespace BrickBreaker
 
         // Game values
        public static int lives;
-        int level;
 
         // Paddle and Ball objects
         Paddle paddle;
@@ -54,11 +53,15 @@ namespace BrickBreaker
 
         Image plainsBackground = Properties.Resources.goodBackground;
 
+
+
         #endregion
 
         public GameScreen()
         {
             InitializeComponent();
+            Form1.size = 16;
+            Form1.FontChange();
             OnStart();
         }
 
@@ -79,7 +82,7 @@ namespace BrickBreaker
             lives = 2;
 
             //set level tracker
-            level = 1;
+            //level = 1;
 
             //set all button presses to false.
             leftArrowDown = rightArrowDown = false;
@@ -201,10 +204,15 @@ namespace BrickBreaker
             {
                 if (ball.BlockCollision(b))
                 {
-                    Noah(b);
+                    //Noah(b);
 
-                    blocks.Remove(b);
-                    score++;
+                    b.hp--;
+
+                    if(b.hp == 0)
+                    {
+                        blocks.Remove(b);
+                        score += b.points;
+                    }
 
                     if (blocks.Count == 0)
                     {
@@ -221,9 +229,36 @@ namespace BrickBreaker
             //redraw the screen
             Refresh();
         }
+        public void SetScore()
+        {
 
+            string highScore = score.ToString();
+            int intScore = Convert.ToInt32(highScore);
+
+            HighScore newScore = new HighScore("Player", intScore);
+            MenuScreen.highScores.Add(newScore);
+
+            XmlWriter writer = XmlWriter.Create("HighScoreXML.xml", null);
+            writer.WriteStartElement("HighScore");
+
+            foreach(HighScore s in MenuScreen.highScores)
+            {
+                writer.WriteElementString("Name", s.name);
+                writer.WriteElementString("Score", s.score.ToString());
+            }
+            writer.WriteEndElement();
+            writer.Close(); 
+
+
+
+        }
         public void OnEnd()
         {
+
+            SetScore();
+            
+            Form1.level++;
+            
             // Goes to the game over screen
             Form form = this.FindForm();
             TransitionScreen ps = new TransitionScreen();
@@ -249,7 +284,7 @@ namespace BrickBreaker
 
         public void GameScreen_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.DrawImageUnscaled(backgroundImages[level - 1], 0, 0);
+            e.Graphics.DrawImageUnscaled(backgroundImages[Form1.level - 1], 0, 0);
 
             // Draws paddle
             paddleBrush.Color = paddle.colour;
@@ -259,7 +294,7 @@ namespace BrickBreaker
             foreach (Block b in blocks)
             {
                 e.Graphics.FillRectangle(blockBrush, b.x, b.y, b.width, b.height);
-
+                
                 if (b.image != null)
                 {
                     e.Graphics.DrawImage(b.image, b.x, b.y, 80, 30);
@@ -294,9 +329,9 @@ namespace BrickBreaker
             {
                 ball.canMove = true;
             }
-            
+
         }
-        
+
         public void Noah(Block b)
         {
             Random randGen = new Random();
@@ -321,7 +356,7 @@ namespace BrickBreaker
 
         public void MariaOnStart()
         {
-            XmlReader reader = XmlReader.Create($"Resources/level{level}.xml");
+            XmlReader reader = XmlReader.Create($"Resources/level{Form1.level}.xml");
 
             while (reader.Read())
             {
@@ -381,7 +416,7 @@ namespace BrickBreaker
             livesList.Add(livesBox2);
             livesList.Add(livesBox3);
 
-            foreach(PictureBox l in livesList)
+            foreach (PictureBox l in livesList)
             {
                 l.Image = Properties.Resources.minecraftHeart;
             }

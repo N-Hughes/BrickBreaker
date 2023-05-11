@@ -16,19 +16,34 @@ namespace BrickBreaker
         {// Make background the last game screen background with a red filter?
             InitializeComponent();
 
+          //  if (GameScreen.lives )
             
           
             subtitleLabel.Font = Form1.myFont;
             scoreLabel.Font = Form1.myFont;
             scoreValue.Font = Form1.myFont;
-            //Form1.size = 72;
+            exitButton .Font = Form1.myFont;
+
+
+            Form1.size = 72;
         
-            //  Form1.FontChange(size);
+            Form1.FontChange();
 
             titleLabel.Font = Form1.myFont;
 
             // Lets use "total score" to add to the xml highscores, we will need a high score screen
-            scoreValue.Text = ($"{Form1.totalScore}");
+          //  scoreValue.Text = ($"{score}");
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            MenuScreen gs = new MenuScreen();
+            Form form = this.FindForm();
+
+            form.Controls.Add(gs);
+            form.Controls.Remove(this);
+
+            gs.Location = new Point((form.Width - gs.Width) / 2, (form.Height - gs.Height) / 2);
         }
     }
 }

@@ -18,7 +18,9 @@ namespace BrickBreaker
 
         public static  int totalScore = 0;
 
-        public static int size = 16;
+        public static float size = 16;
+       
+        public static int level = 1;
 
 
         // Creating a custom font (16p)
@@ -27,7 +29,7 @@ namespace BrickBreaker
         private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont, uint cbFont,
             IntPtr pdv, [System.Runtime.InteropServices.In] ref uint pcFonts);
 
-        private PrivateFontCollection fonts = new PrivateFontCollection();
+        private static PrivateFontCollection fonts = new PrivateFontCollection();
         // Accessing the minecraft font on all forms
         public static Font myFont;
         #endregion
@@ -55,7 +57,7 @@ namespace BrickBreaker
         }
 
 
-        public void FontChange()
+        public static void FontChange()
         {
             byte[] fontData = Properties.Resources.Minecraft;
             IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(fontData.Length);

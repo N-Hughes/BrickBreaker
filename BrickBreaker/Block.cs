@@ -15,6 +15,7 @@ namespace BrickBreaker
         public int x;
         public int y; 
         public int hp;
+        public int points;
         public Image image;
 
         public static Random rand = new Random();
@@ -24,6 +25,7 @@ namespace BrickBreaker
             x = _x;
             y = _y;
             hp = _hp;
+            points = _hp;
             image = _image;
         }
     }
