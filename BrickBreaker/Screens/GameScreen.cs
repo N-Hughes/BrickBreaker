@@ -248,9 +248,6 @@ namespace BrickBreaker
             }
             writer.WriteEndElement();
             writer.Close(); 
-
-
-
         }
         public void OnEnd()
         {
