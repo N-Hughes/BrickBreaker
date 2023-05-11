@@ -200,10 +200,15 @@ namespace BrickBreaker
             {
                 if (ball.BlockCollision(b))
                 {
-                    Noah(b);
+                    //Noah(b);
 
-                    blocks.Remove(b);
-                    score++;
+                    b.hp--;
+
+                    if(b.hp == 0)
+                    {
+                        blocks.Remove(b);
+                        score += b.points;
+                    }
 
                     if (blocks.Count == 0)
                     {
