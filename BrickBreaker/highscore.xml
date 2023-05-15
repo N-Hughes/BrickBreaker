@@ -1,18 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <HighScores>
 	<Player>
-		<score>1000</score>
+		<Name>cam</Name>
+		<Score>31</Score>
 	</Player>
-	<Player>
-		<score>900</score>
-	</Player>
-	<Player>
-		<score>800</score>
-	</Player>
-	<Player>
-		<score>700</score>
-	</Player>
-	<Player>
-		<score>600</score>
-	</Player>
-</HighScores> 
+</HighScores>

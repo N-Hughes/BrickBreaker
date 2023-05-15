@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace BrickBreaker
 {
@@ -14,16 +15,49 @@ namespace BrickBreaker
     {
         List<string> messageList = new List<string>();
 
+        public static List<HighScore> highScores = new List<HighScore>();
+        
+
         public MenuScreen()
+
         {
             InitializeComponent();
+            Form1.size = 16;
+
+            Form1.FontChange();
+            Form1.level = 1;
 
             playButton.Font = Form1.myFont;
             hardButton.Font = Form1.myFont;
             exitButton.Font = Form1.myFont;
+            instructionsButton.Font = Form1.myFont;
+            highscoreButton.Font = Form1.myFont;
             subtitleLabel.Font = Form1.myFont;
         }
+        public void Cam()
+        {
+            string name, score;
+            XmlReader reader = XmlReader.Create("HighScoreXML.xml");
+            while (reader.Read())
+            {
+                if (reader.NodeType == XmlNodeType.Text)
+                {
+                    name = reader.ReadString();
 
+                    reader.ReadToNextSibling("Score");
+
+                    score = reader.ReadString();
+
+                    int newScore = Convert.ToInt32(score);
+
+                   HighScore h= new HighScore(name, newScore);
+
+                   highScores.Add(h);
+                }
+            }
+
+
+        }
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -32,7 +66,7 @@ namespace BrickBreaker
         private void playButton_Click(object sender, EventArgs e)
         {
             // Goes to the game screen
-            GameScreen gs = new GameScreen();
+            TransitionScreen gs = new TransitionScreen();
             Form form = this.FindForm();
 
             form.Controls.Add(gs);
@@ -60,6 +94,19 @@ namespace BrickBreaker
         {
             messageSet();
 
+        }
+
+        private void instructionsButton_Click(object sender, EventArgs e)
+        {
+            //TransitionScreen ts = new TransitionScreen();
+            //Form form = this.FindForm();
+
+            //form.Controls.Add(ts);
+            //form.Controls.Remove(this);
+
+            //ts.Location = new Point((form.Width - ts.Width) / 2, (form.Height - ts.Height) / 2);
+
+            // this needs to be fixed ?
         }
     }
 }

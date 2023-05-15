@@ -8,26 +8,36 @@ namespace BrickBreaker
     public class Ball
     {
         public bool canMove;
-        public int x, y, size;
+        public int x, y, size, prevX, prevY;
         public Color colour;
-        public double xSpeed, ySpeed;
+        public int xSpeed, ySpeed;
         public static Random rand = new Random();
+        public int startXSpeed, startYSpeed;
 
-        public Ball(int _x, int _y, double _xSpeed, double _ySpeed, int _ballSize)
+
+        public Ball(int _x, int _y, int _xSpeed, int _ySpeed, int _ballSize)
         {
             x = _x;
             y = _y;
             xSpeed = _xSpeed;
             ySpeed = _ySpeed;
             size = _ballSize;
+            startXSpeed = xSpeed;
+            startYSpeed = ySpeed;
+
+
 
         }
 
         public void Move()
         {
             if (canMove == false) { return; }
-            x = x + Convert.ToInt32(xSpeed);
-            y = y + Convert.ToInt32(ySpeed);
+            x += xSpeed;
+            y += ySpeed;
+
+            prevX = x;
+            prevY = y;
+
         }
 
         public bool BlockCollision(Block b)
@@ -37,32 +47,21 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(blockRec))
             {
-                if (x + (size / 2) <= b.x || x + (size / 2)>= b.x + b.width)
+                if (x + (size / 2) <= b.x || x + (size / 2) >= b.x + b.width)
                 {
                     xSpeed *= -1;
-                    if(xSpeed > 0)
-                    {
-                        b.x = b.x - size;
-                    }
-                    else if (xSpeed < 0)
-                    {
-                        b.x = b.x + size;
-                    }
+                    x = prevX;
+                    y = prevY;
                 }
                 else
                 {
-                ySpeed *= -1;
-                     if (ySpeed > 0)
-                    {
-                        b.y = b.y + size;
-                    }
-                    else if(ySpeed < 0)
-                    {
-                        b.y = b.y - size;
-                    }
-                }   
+                    ySpeed *= -1;
+                    y = prevY;
+                    x = prevX;
 
                 }
+
+            }
 
             return blockRec.IntersectsWith(ballRec);
         }
@@ -74,15 +73,16 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(paddleRec))
             {
+                BounceAngle();
                 if (p.x + (p.width / 2) >= x) // hits left
                 {
-                    xSpeed = Math.Abs(xSpeed);
+                    xSpeed = -Math.Abs(xSpeed);
                     ySpeed *= -1;
                     y = p.y - size;
                 }
                 else if (p.x + (p.width / 2) <= x) //hits right
                 {
-                    xSpeed = -Math.Abs(xSpeed);
+                    xSpeed = Math.Abs(xSpeed);
                     ySpeed *= -1;
                     y = p.y - size;
                 }
@@ -120,6 +120,29 @@ namespace BrickBreaker
             }
 
             return didCollide;
+        }
+
+        public void BounceAngle()
+        {
+            int num = rand.Next(0, 5);
+            switch (num)
+            {
+                case 0:
+                    xSpeed = startXSpeed - 2;
+                    break;
+                case 1:
+                    xSpeed = startXSpeed - 1;
+                    break;
+                case 2:
+                    xSpeed = startXSpeed;
+                    break;
+                case 3:
+                    xSpeed= startXSpeed + 1;
+                    break;
+                case 4:
+                    xSpeed = startXSpeed + 2;
+                    break; 
+            }
         }
 
     }
